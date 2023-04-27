@@ -1,0 +1,17 @@
+{
+  "platformVersion": "ANDROID",
+  "deviceList": [
+    {
+      "id": "1",
+      "deviceName": "RFCR310WZXT",
+      "automationName": "Uiautomator2",
+      "comment": "Samsung S20FE"
+    },
+    {
+      "id": "2",
+      "deviceName": "",
+      "automationName": "",
+      "comment": ""
+    }
+  ]
+}

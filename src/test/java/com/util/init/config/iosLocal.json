@@ -1,0 +1,17 @@
+{
+  "platformVersion": "IOS",
+  "deviceList": [
+    {
+      "id": "1",
+      "deviceName": "",
+      "automationName": "",
+      "comment": ""
+    },
+    {
+      "id": "2",
+      "deviceName": "",
+      "automationName": "",
+      "comment": ""
+    }
+  ]
+}
