@@ -3,8 +3,8 @@
   "deviceList": [
     {
       "id": "1",
-      "deviceName": "",
-      "automationName": "",
+      "deviceName": "IPhone 14 Pro",
+      "automationName": "XCUITest",
       "comment": ""
     },
     {
