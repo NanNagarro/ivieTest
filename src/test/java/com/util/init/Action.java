@@ -26,7 +26,7 @@ public class Action extends MobileDriverInit {
         System.out.println("pointOptionEnd height:" + pointOptionEnd.y);
 
         TouchAction swipe = new TouchAction(driver);
-        swipe.press(pointOptionStart.x, pointOptionStart.y)
+        swipe.longPress(pointOptionStart.x, pointOptionStart.y)
                 .moveTo(pointOptionEnd.x, pointOptionEnd.y).release();
 
         MultiTouchAction multiAction = new MultiTouchAction(driver);
