@@ -17,13 +17,19 @@ public class MobileDriverInit {
     @BeforeClass
     public static MobileDriver setupAppium() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName", "IPhone 14 Pro");
-        capabilities.setCapability("platformVersion", "16.4");
-        capabilities.setCapability("udid", "4F54CFA9-0B01-44A2-A44F-033D438C083C");
-        capabilities.setCapability("automationName", "XCUITest");
+//        capabilities.setCapability("deviceName", "IPhone 14 Pro");
+//        capabilities.setCapability("platformVersion", "16.4");
+//        capabilities.setCapability("udid", "4F54CFA9-0B01-44A2-A44F-033D438C083C");
+//        capabilities.setCapability("automationName", "XCUITest");
+//        capabilities.setCapability("app", "/Users/christophubleis/Library/Developer/Xcode/DerivedData/ivie-bzinybpwuwunkgclitqehaobrfzf/Build/Products/Debug-iphonesimulator/ivie.app");
+
+        capabilities.setCapability("deviceName", "RFCR310WZXT");
+        capabilities.setCapability("platformVersion", "13.0");
+        capabilities.setCapability("automationName", "UiAutomator2 ");
         capabilities.setCapability("app", "/Users/christophubleis/Library/Developer/Xcode/DerivedData/ivie-bzinybpwuwunkgclitqehaobrfzf/Build/Products/Debug-iphonesimulator/ivie.app");
+
         URL serverUrl = new URL("http://127.0.0.1:4723/wd/hub");
-        PLATFORM_NAME platform_name = PLATFORM_NAME.IOS;
+        PLATFORM_NAME platform_name = PLATFORM_NAME.ANDROID;
 
 
         switch (platform_name) {

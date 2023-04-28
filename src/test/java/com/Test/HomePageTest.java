@@ -1,8 +1,8 @@
 package com.Test;
 
-import com.Page.BasePage;
-import com.Page.HomePage;
-import com.Page.TutorialPage;
+import com.Page.util.BasePage;
+import com.Page.HamburgerMenu.Home;
+import com.Page.util.TutorialPage;
 import org.testng.annotations.Test;
 
 public class HomePageTest extends BasePage {
@@ -12,7 +12,7 @@ public class HomePageTest extends BasePage {
         TutorialPage tp = new TutorialPage(driver);
         tp.toMainPage();
 
-        HomePage hp = new HomePage(driver);
+        Home hp = new Home(driver);
         hp.acceptCookies();
         hp.menuButtonClick();
         Thread.sleep(100000);

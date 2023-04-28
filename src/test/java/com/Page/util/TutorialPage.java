@@ -1,17 +1,15 @@
-package com.Page;
+package com.Page.util;
 
 import com.util.init.MobileDriverInit;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
 
-import static com.util.init.Action.swipeToLeftAction;
+import static com.util.helpers.Action.swipeToLeftAction;
 
 public class TutorialPage extends MobileDriverInit {
 
@@ -35,7 +33,7 @@ public class TutorialPage extends MobileDriverInit {
         return tutorialImage.isDisplayed();
     }
 
-    public void tutorialImageSwipeLeft(){
+    public void tutorialImageSwipeLeft() throws InterruptedException {
         swipeToLeftAction(tutorialImage);
     }
 
