@@ -7,7 +7,8 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 
 public class Action extends MobileDriverInit {
-    public static void swipeToLeftAction(WebElement  element) {
+    public static void swipeToLeftAction(WebElement  element) throws InterruptedException {
+        Thread.sleep(10000);
 
         Dimension elementLocation = element.getSize();
         int elementWidth = elementLocation.getWidth();
@@ -26,7 +27,7 @@ public class Action extends MobileDriverInit {
         System.out.println("pointOptionEnd height:" + pointOptionEnd.y);
 
         TouchAction swipe = new TouchAction(driver);
-        swipe.press(pointOptionStart.x, pointOptionStart.y)
+        swipe.longPress(pointOptionStart.x, pointOptionStart.y)
                 .moveTo(pointOptionEnd.x, pointOptionEnd.y).release();
 
         MultiTouchAction multiAction = new MultiTouchAction(driver);

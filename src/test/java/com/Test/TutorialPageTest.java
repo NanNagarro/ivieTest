@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class TutorialPageTest extends MobileDriverInit {
     @Test
-    public void testLogin() {
+    public void testLogin() throws InterruptedException {
         TutorialPage tp = new TutorialPage(driver);
         tp.toMainPage();
     }

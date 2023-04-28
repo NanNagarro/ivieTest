@@ -14,16 +14,16 @@ import static com.util.init.Action.swipeToLeftAction;
 public class TutorialPage {
 
     @AndroidFindBy(id = "animation_view")
-    @iOSFindBy(id = "")
+    @iOSFindBy(id = "animation_view")
     private WebElement tutorialImage;
 
     @AndroidFindBy(id = "skip_button")
-    @iOSFindBy(id = "")
+    @iOSFindBy(id = "skip_button")
     private WebElement skipButton;
 
 
     public TutorialPage(AppiumDriver driver) {
-        PageFactory.initElements(new AppiumFieldDecorator(driver, 1000, TimeUnit.MILLISECONDS), this);
+        PageFactory.initElements(new AppiumFieldDecorator(driver, 5000, TimeUnit.MILLISECONDS), this);
     }
 
 
@@ -31,11 +31,12 @@ public class TutorialPage {
         return tutorialImage.isDisplayed();
     }
 
-    public void tutorialImageSwipeLeft(){
+    public void tutorialImageSwipeLeft() throws InterruptedException {
+
         swipeToLeftAction(tutorialImage);
     }
 
-    public void toMainPage() {
+    public void toMainPage() throws InterruptedException {
         tutorialImageSwipeLeft();
         tutorialImageSwipeLeft();
         tutorialImageSwipeLeft();
