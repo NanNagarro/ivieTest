@@ -9,7 +9,7 @@ public class HomePageTest extends BasePage {
 
     @Test
     public void goToSignUpPage(){
-        loginRobot.toHamburgerMenuIndexPage().goToSignUpPage();
+        loginRobot.toHamburgerMenuIndexPage().goToSignUpPage().inputEmail();
     }
 
 }
