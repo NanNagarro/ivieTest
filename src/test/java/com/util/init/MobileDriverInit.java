@@ -45,8 +45,7 @@ public class MobileDriverInit {
                 driver = new IOSDriver(serverUrl, capabilities);
                 break;
         }
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        driver.resetApp();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return  driver;
     }
 

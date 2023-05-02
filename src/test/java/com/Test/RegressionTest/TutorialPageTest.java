@@ -6,10 +6,9 @@ import org.testng.annotations.Test;
 
 public class TutorialPageTest extends BasePage {
     @Test
-    public void testLogin() throws InterruptedException {
-        TutorialPage tp = new TutorialPage(driver);
+    public void testLogin() {
+        TutorialPage tp = new TutorialPage();
         tp.toHomePage();
-        Thread.sleep(2000);
     }
 
 
