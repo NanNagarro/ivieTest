@@ -25,8 +25,8 @@ public class MobileDriverInit {
 
         capabilities.setCapability("deviceName", "RFCR310WZXT");
         capabilities.setCapability("platformVersion", "13.0");
-        capabilities.setCapability("automationName", "UiAutomator2 ");
-        capabilities.setCapability("app", "/Users/christophubleis/Library/Developer/Xcode/DerivedData/ivie-bzinybpwuwunkgclitqehaobrfzf/Build/Products/Debug-iphonesimulator/ivie.app");
+        capabilities.setCapability("automationName", "UiAutomator2");
+        capabilities.setCapability("app", "C:/Software/apk/app-debug.apk");
 
         URL serverUrl = new URL("http://127.0.0.1:4723/wd/hub");
         PLATFORM_NAME platform_name = PLATFORM_NAME.ANDROID;

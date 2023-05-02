@@ -1,4 +1,4 @@
-package com.Page.HamburgerMenu;
+package com.page.HamburgerMenu;
 
 import com.util.init.MobileDriverInit;
 import io.appium.java_client.AppiumDriver;
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
 
-public class Home extends MobileDriverInit {
+public class HomePage extends MobileDriverInit {
     @AndroidFindBy(id = "btn_accept_cookies")
     @iOSFindBy(id = "")
     private WebElement acceptCookies;
@@ -19,18 +19,20 @@ public class Home extends MobileDriverInit {
     @iOSFindBy(id = "")
     private WebElement menuButton;
 
-    public Home(AppiumDriver driver) {
+    public HomePage(AppiumDriver driver) {
         PageFactory.initElements(new AppiumFieldDecorator(driver, 1000, TimeUnit.MILLISECONDS), this);
     }
 
-    public void acceptCookies() throws InterruptedException {
-        Thread.sleep(10000);
-        System.out.println("coick");
+    public HomePage acceptCookies() throws InterruptedException {
+        Thread.sleep(2000);
+        System.out.println("click");
         acceptCookies.click();
+        return this;
     }
 
-    public void menuButtonClick(){
+    public HomePage menuButtonClick(){
         menuButton.click();
+        return this;
     }
 
     public void t1() {
