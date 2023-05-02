@@ -5,11 +5,12 @@ import com.tests.LoginRobot;
 import org.testng.annotations.Test;
 
 public class HomePageTest extends BasePage {
-    LoginRobot loginRobot = new LoginRobot();
 
     @Test
-    public void goToSignUpPage(){
-        loginRobot.toHamburgerMenuIndexPage().goToSignUpPage().inputEmail();
+    public void goToSignUpPage() throws InterruptedException {
+        new LoginRobot()
+                .toHamburgerMenuIndexPage().goToSettingsPage();
+
     }
 
 }
