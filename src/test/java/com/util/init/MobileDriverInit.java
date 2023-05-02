@@ -35,7 +35,6 @@ public class MobileDriverInit {
                 break;
 
             case IOS:
-                capabilities.setCapability("platformName", "Ios");
                 capabilities.setCapability("platformName", "iOS");
                 capabilities.setCapability("deviceName", "IPhone 14 Pro");
                 capabilities.setCapability("platformVersion", "16.4");

@@ -5,12 +5,11 @@ import com.tests.LoginRobot;
 import org.testng.annotations.Test;
 
 public class HomePageTest extends BasePage {
+    LoginRobot loginRobot = new LoginRobot();
 
     @Test
-    public void testLogin()  {
-        LoginRobot robot = new LoginRobot();
-        robot.toHomePage();
-
-
+    public void goToSignUpPage(){
+        loginRobot.toHamburgerMenuIndexPage().goToSignUpPage();
     }
+
 }

@@ -1,6 +1,7 @@
 package com.page.HamburgerMenu;
 
 import com.page.util.BasePage;
+import com.page.util.HamburgerMenuIndexPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebElement;
@@ -21,9 +22,10 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public HomePage menuButtonClick(){
+    public HamburgerMenuIndexPage menuButtonClick(){
+        HamburgerMenuIndexPage hamburgerMenuIndexPage = new HamburgerMenuIndexPage();
         menuButton.click();
-        return this;
+        return hamburgerMenuIndexPage;
     }
 
 }

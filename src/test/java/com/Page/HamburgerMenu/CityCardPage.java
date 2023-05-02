@@ -1,4 +1,4 @@
 package com.page.HamburgerMenu;
 
-public class CityGuidePage {
+public class CityCardPage {
 }
