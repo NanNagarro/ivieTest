@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class HomePageTest extends BasePage {
 
     @Test
-    public void testLogin() throws InterruptedException {
+    public void testLogin()  {
         LoginRobot robot = new LoginRobot();
         robot.toHomePage();
 

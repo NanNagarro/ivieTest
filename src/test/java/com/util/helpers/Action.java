@@ -8,9 +8,7 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 
 public class Action extends MobileDriverInit {
-    public static void swipeToLeftAction(WebElement  element) throws InterruptedException {
-        Thread.sleep(2000);
-
+    public static void swipeToLeftAction(WebElement  element) {
         Dimension elementLocation = element.getSize();
         int elementWidth = elementLocation.getWidth();
         int elementHeight = elementLocation.getHeight();
