@@ -9,9 +9,8 @@ public class HomePageTest extends BasePage {
     @Test
     public void goToSignUpPage() throws InterruptedException {
         new LoginRobot()
-                .toHamburgerMenuIndexPage()
-                .goToSignUpPage()
-                .googleLogin();
+                .toHamburgerMenuIndexPage().goToMapPage();
+
 
     }
 

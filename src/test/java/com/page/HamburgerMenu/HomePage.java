@@ -9,11 +9,11 @@ import org.openqa.selenium.WebElement;
 
 public class HomePage extends BasePage {
     @AndroidFindBy(id = "btn_accept_cookies")
-    @iOSFindBy(id = "id")
+    @iOSFindBy(id = "Accept All Trackings")
     private WebElement acceptCookies;
 
     @AndroidFindBy(id = "menu_button")
-    @iOSFindBy(id = "id")
+    @iOSFindBy(id = "menuButton")
     private WebElement menuButton;
 
     @AndroidFindBy(id = "id")
@@ -29,10 +29,32 @@ public class HomePage extends BasePage {
     @iOSFindBy(id = "id")
     private WebElement detailButton;
 
+    @AndroidFindBy(id = "id")
+    @iOSFindBy(id = "Don’t Allow")
+    private WebElement dontAllowNotification;
+
+
+    @AndroidFindBy(id = "id")
+    @iOSFindBy(id = "permissionConsentAllowConsentButton")
+    private WebElement permissionConsent;
+
+    @AndroidFindBy(id = "id")
+    @iOSFindBy(id = "Ask App Not to Track")
+    private WebElement askAppNotToTrack;
+
+
 
     public HomePage acceptCookies()  {
         System.out.println("click");
         acceptCookies.click();
+        return this;
+    }
+
+    public HomePage acceptNoTrackingOnIOS()  {
+        System.out.println("click");
+        permissionConsent.click();
+        askAppNotToTrack.click();
+
         return this;
     }
 

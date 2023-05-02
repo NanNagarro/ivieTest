@@ -27,10 +27,10 @@ public class MobileDriverInit {
         switch (platform_name) {
             case ANDROID :
                 capabilities.setCapability("platformName", "Android");
-                capabilities.setCapability("deviceName", "RFCR310WZXT");
+                capabilities.setCapability("deviceName", "Pixel_6_API_33"); //RFCR310WZXT
                 capabilities.setCapability("platformVersion", "13.0");
                 capabilities.setCapability("automationName", "UiAutomator2");
-                capabilities.setCapability("app", "C:/Software/apk/app-debug.apk");
+                capabilities.setCapability("app", "/Users/christophubleis/Desktop/WTV/AndroidAutomation/iVieAndroid/Application/app-debug.apk"); //C:/Software/apk/app-debug.apk
                 driver = new AndroidDriver(serverUrl, capabilities);
                 break;
 

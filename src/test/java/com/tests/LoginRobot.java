@@ -10,6 +10,7 @@ public class LoginRobot extends BasePage {
         TutorialPage tp = new TutorialPage();
         return tp.toHomePage()
                 .acceptCookies()
+                .acceptNoTrackingOnIOS()
                 .menuButtonClick();
     }
 }
