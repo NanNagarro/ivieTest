@@ -1,4 +1,4 @@
-package com.Page.util;
+package com.page.util;
 
 import com.util.init.MobileDriverInit;
 

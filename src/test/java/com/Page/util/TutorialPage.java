@@ -1,5 +1,6 @@
-package com.Page.util;
+package com.page.util;
 
+import com.page.HamburgerMenu.HomePage;
 import com.util.init.MobileDriverInit;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -37,12 +38,14 @@ public class TutorialPage extends MobileDriverInit {
         swipeToLeftAction(tutorialImage);
     }
 
-    public void toMainPage() throws InterruptedException {
+    public HomePage toHomePage() throws InterruptedException {
         tutorialImageSwipeLeft();
         tutorialImageSwipeLeft();
         tutorialImageSwipeLeft();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         skipButton.click();
+        HomePage hp = new HomePage(driver);
+        return  hp;
     }
 
 }
