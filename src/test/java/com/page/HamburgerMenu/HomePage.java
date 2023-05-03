@@ -59,6 +59,7 @@ public class HomePage extends BasePage {
     }
 
     public HomePage acceptNoTrackingOnIOS()  {
+
         System.out.println("click");
         permissionConsent.click();
         askAppNotToTrack.click();
