@@ -1,6 +1,6 @@
 package com.page.util;
 
-import com.util.init.MobileDriverInit;
+import com.util.init.Driver.MobileDriverInit;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;

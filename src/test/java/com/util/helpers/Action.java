@@ -1,6 +1,6 @@
 package com.util.helpers;
 
-import com.util.init.MobileDriverInit;
+import com.util.init.Driver.MobileDriverInit;
 import io.appium.java_client.MultiTouchAction;
 import io.appium.java_client.TouchAction;
 import org.openqa.selenium.Dimension;
