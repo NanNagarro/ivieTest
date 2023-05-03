@@ -17,17 +17,25 @@ public class HomePage extends BasePage {
     private WebElement menuButton;
 
     @AndroidFindBy(id = "id")
-    @iOSFindBy(id = "id")
+    @iOSFindBy(id = "homePage_highlights_button")
     private WebElement highLights;
 
 
     @AndroidFindBy(id = "id")
-    @iOSFindBy(id = "id")
+    @iOSFindBy(id = "homePage_forYou_button")
     private WebElement ForYou;
 
     @AndroidFindBy(id = "id")
     @iOSFindBy(id = "id")
     private WebElement detailButton;
+
+    @AndroidFindBy(id = "id")
+    @iOSFindBy(id = "weatherButton")
+    private WebElement WeatherIcon;
+
+    @AndroidFindBy(id = "id")
+    @iOSFindBy(id = "searchButton")
+    private WebElement searchButton;
 
     @AndroidFindBy(id = "id")
     @iOSFindBy(id = "Don’t Allow")
@@ -51,6 +59,7 @@ public class HomePage extends BasePage {
     }
 
     public HomePage acceptNoTrackingOnIOS()  {
+
         System.out.println("click");
         permissionConsent.click();
         askAppNotToTrack.click();
