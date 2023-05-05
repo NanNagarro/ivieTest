@@ -1,4 +1,4 @@
 package com.Test.PersonalisationTest;
 
-public class ForYouTab {
+public class ConsentForUserTest {
 }
