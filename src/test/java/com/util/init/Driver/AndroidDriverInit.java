@@ -22,9 +22,9 @@ public class AndroidDriverInit extends MobileDriverInit {
         }
         else{
             serverUrl = new URL("http://hub.browserstack.com/wd/hub");
-            capabilities.setCapability("browserstack.user", "nanli_kwsMtj");
-            capabilities.setCapability("browserstack.key", "Z5PhssPR6JViB2yWaTzd");
-            capabilities.setCapability("app_url", "bs://1296596b6e45a1876f7d712502a82b72c212a5a5");
+            capabilities.setCapability("browserstack.user", "prinzchtv_Zsw9UN");
+            capabilities.setCapability("browserstack.key", "5JWJFBuh2UTNnPyEP2DY");
+            capabilities.setCapability("app_url", "bs://52cd3f404a59054a0d2079d0f7cedfb91cdcb6b2");
         }
 
         capabilities.setCapability("platformName", "Android");

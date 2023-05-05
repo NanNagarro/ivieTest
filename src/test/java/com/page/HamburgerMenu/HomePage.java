@@ -16,12 +16,12 @@ public class HomePage extends BasePage {
     @iOSFindBy(id = "menuButton")
     private WebElement menuButton;
 
-    @AndroidFindBy(id = "id")
+    @AndroidFindBy(id = "Highlights")
     @iOSFindBy(id = "homePage_highlights_button")
     private WebElement highLights;
 
 
-    @AndroidFindBy(id = "id")
+    @AndroidFindBy(id = "For you")
     @iOSFindBy(id = "homePage_forYou_button")
     private WebElement ForYou;
 
@@ -29,11 +29,11 @@ public class HomePage extends BasePage {
     @iOSFindBy(id = "id")
     private WebElement detailButton;
 
-    @AndroidFindBy(id = "id")
+    @AndroidFindBy(id = "at.vienna.ivie.dev:id/current_weather_layout")
     @iOSFindBy(id = "weatherButton")
     private WebElement WeatherIcon;
 
-    @AndroidFindBy(id = "id")
+    @AndroidFindBy(id = "at.vienna.ivie.dev:id/search_layout")
     @iOSFindBy(id = "searchButton")
     private WebElement searchButton;
 
