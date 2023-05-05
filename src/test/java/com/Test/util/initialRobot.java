@@ -1,4 +1,4 @@
-package com.Test;
+package com.Test.util;
 
 import com.page.util.HamburgerMenuIndexPage;
 import com.page.util.TutorialPage;

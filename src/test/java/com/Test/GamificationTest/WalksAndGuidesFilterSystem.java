@@ -1,4 +1,4 @@
-package com.Test;
+package com.Test.GamificationTest;
 
 public class WalksAndGuidesFilterSystem {
 }

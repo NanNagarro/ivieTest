@@ -1,4 +1,4 @@
-package com.Test;
+package com.Test.util;
 
 import com.page.util.BasePage;
 import org.testng.annotations.Test;
