@@ -1,9 +1,6 @@
 package com.page.util;
 
-import com.page.HamburgerMenu.HomePage;
-import com.page.HamburgerMenu.MapPage;
-import com.page.HamburgerMenu.SignUpPage;
-import com.page.HamburgerMenu.WalksAndGuidePage;
+import com.page.HamburgerMenu.*;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebElement;
@@ -50,57 +47,53 @@ public class HamburgerMenuIndexPage extends BasePage {
     private WebElement settings;
 
     public SignUpPage goToSignUpPage()  {
-        SignUpPage signUpPage = new SignUpPage();
         signUpButton.click();
-        return signUpPage;
+        return new SignUpPage();
     }
 
-    public void goToHomePage() throws InterruptedException {
-        HomePage signUpPage = new HomePage();
+    public HomePage goToHomePage() {
         home.click();
-        Thread.sleep(10000);
+        return  new HomePage();
     }
 
-    public void goToMapPage() throws InterruptedException {
-        MapPage mapPage = new MapPage();
+    public MapPage goToMapPage() {
         map.click();
-        Thread.sleep(1000);
+        return  new MapPage();
     }
 
-    public void goToWalksAndGuidePage() throws InterruptedException {
-        WalksAndGuidePage walksAndGuidePage = new WalksAndGuidePage();
+    public WalksAndGuidePage goToWalksAndGuidePage() {
         walksAndGuide.click();
-        Thread.sleep(10000);
+        return new WalksAndGuidePage();
     }
 
-    public void goToEventsPage() throws InterruptedException {
+    public EventsPage goToEventsPage() {
         events.click();
-        Thread.sleep(10000);
+        return new EventsPage();
     }
 
-    public void goToCityCardPage() throws InterruptedException {
+    public CityCardPage goToCityCardPage() {
         cityCard.click();
-        Thread.sleep(10000);
+        return new CityCardPage();
     }
 
-    public void goToMyLocationPage() throws InterruptedException {
+    public MyLocationsPage goToMyLocationPage() {
         myLocations.click();
-        Thread.sleep(10000);
+        return new MyLocationsPage();
     }
 
-    public void goToIvieTipsPage() throws InterruptedException {
+    public IvieTipsPage goToIvieTipsPage() {
         ivieTips.click();
-        Thread.sleep(10000);
+        return new IvieTipsPage();
     }
 
-    public void goToTouristInfoPage() throws InterruptedException {
+    public TouristInfoPage goToTouristInfoPage() {
         touristInfo.click();
-        Thread.sleep(10000);
+        return new TouristInfoPage();
     }
 
-    public void goToSettingsPage() throws InterruptedException {
+    public SettingsPage goToSettingsPage(){
         settings.click();
-        Thread.sleep(10000);
+        return new SettingsPage();
     }
 
 }

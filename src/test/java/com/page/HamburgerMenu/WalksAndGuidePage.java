@@ -1,16 +1,31 @@
 package com.page.HamburgerMenu;
 
+import com.page.util.BasePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebElement;
 
-public class WalksAndGuidePage {
+public class WalksAndGuidePage extends BasePage {
 
-    @AndroidFindBy(id = "at.vienna.ivie.dev:id/spinner_item_text")
+    @AndroidFindBy(id = "spinner_item_text")
     @iOSFindBy(xpath = "//XCUIElementTypeButton[@name=\"Top Walks\"]")
     private WebElement sortedBy;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[2]s")
+    // TODO: 05.05.2023 sort by items id are all the same.
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[1]")
+    @iOSFindBy(xpath = "")
+    private WebElement sortedByTopWalks;
+
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[2]")
+    @iOSFindBy(xpath = "")
+    private WebElement sortedByAlphabetical;
+
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[3]")
+    @iOSFindBy(xpath = "")
+    private WebElement sortedByMyInterests;
+
+
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[2]")
     @iOSFindBy(id = "Walks")
     private WebElement filterWalksButton;
 
@@ -31,10 +46,9 @@ public class WalksAndGuidePage {
     private WebElement selectGuideCuriousMuseums;
 
 
-    public void goOnAWalk() throws InterruptedException {
+    public void goOnAWalk()  {
        filterWalksButton.click();
        selectWalkAndAudioBeethoven.click();
-        Thread.sleep(10000);
     }
 
     public void goOnAGuide() throws InterruptedException {

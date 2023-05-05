@@ -5,6 +5,7 @@ import com.page.util.HamburgerMenuIndexPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 
 public class HomePage extends BasePage {
@@ -12,8 +13,7 @@ public class HomePage extends BasePage {
     @iOSFindBy(id = "Accept All Trackings")
     private WebElement acceptCookies;
 
-    @AndroidFindBy(id = "menu_button")
-    @iOSFindBy(id = "menuButton")
+    @FindBy(id = "menuButton")
     private WebElement menuButton;
 
     @AndroidFindBy(id = "Highlights")
