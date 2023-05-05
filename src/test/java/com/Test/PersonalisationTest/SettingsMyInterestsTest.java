@@ -1,4 +1,4 @@
 package com.Test.PersonalisationTest;
 
-public class ConsentForUser {
+public class SettingsMyInterestsTest {
 }
