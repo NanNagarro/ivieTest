@@ -15,15 +15,11 @@ public class Action extends MobileDriverInit {
 
         Point pointOptionStart = new Point(0, 0);
         pointOptionStart.x = (int)(elementWidth * 0.9);
-        System.out.println("pointOptionStart startPointX:" + pointOptionStart.x);
         pointOptionStart.y = elementHeight;
-        System.out.println("pointOptionStart height:" + pointOptionStart.y);
 
         Point pointOptionEnd = new Point(0, 0);
         pointOptionEnd.x = (int)(elementWidth * 0.1);
         pointOptionEnd.y = elementHeight;
-        System.out.println("pointOptionEnd startPointX:" + pointOptionEnd.x);
-        System.out.println("pointOptionEnd height:" + pointOptionEnd.y);
 
         TouchAction swipe = new TouchAction(driver);
         swipe.longPress(pointOptionStart.x, pointOptionStart.y)

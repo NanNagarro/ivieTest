@@ -53,14 +53,11 @@ public class HomePage extends BasePage {
 
 
     public HomePage acceptCookies()  {
-        System.out.println("click");
         acceptCookies.click();
         return this;
     }
 
     public HomePage acceptNoTrackingOnIOS()  {
-
-        System.out.println("click");
         permissionConsent.click();
         askAppNotToTrack.click();
 

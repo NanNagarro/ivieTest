@@ -64,7 +64,7 @@ public class HamburgerMenuIndexPage extends BasePage {
     public void goToMapPage() throws InterruptedException {
         MapPage mapPage = new MapPage();
         map.click();
-        Thread.sleep(10000);
+        Thread.sleep(1000);
     }
 
     public void goToWalksAndGuidePage() throws InterruptedException {

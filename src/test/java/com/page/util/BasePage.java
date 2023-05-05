@@ -16,6 +16,7 @@ public abstract class BasePage extends MobileDriverInit {
 
 
     public void initElements(){
+        System.out.println("Binding page with driver" + this);
         PageFactory.initElements(new AppiumFieldDecorator(driver, 60, TimeUnit.SECONDS), this);
     }
 
