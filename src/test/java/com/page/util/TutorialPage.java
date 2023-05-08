@@ -8,12 +8,12 @@ import static com.util.helpers.Action.swipeToLeftAction;
 public class TutorialPage extends BasePage {
 
 //    @AndroidFindBy(id = "animation_view")
-//    @iOSFindBy(id = "animation_view2")
+//    @iOSXCUITFindBy(id = "animation_view2")
     @FindBy(id = "animation_view")
     private WebElement tutorialImage;
 
 //    @AndroidFindBy(id = "skip_button")
-//    @iOSFindBy(id = "")
+//    @iOSXCUITFindBy(id = "")
     @FindBy(id = "skip_button")
     private WebElement skipButton;
 

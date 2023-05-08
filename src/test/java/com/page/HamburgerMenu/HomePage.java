@@ -3,51 +3,51 @@ package com.page.HamburgerMenu;
 import com.page.util.BasePage;
 import com.page.util.HamburgerMenuIndexPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 
 public class HomePage extends BasePage {
     @AndroidFindBy(id = "btn_accept_cookies")
-    @iOSFindBy(id = "Accept All Trackings")
+    @iOSXCUITFindBy(id = "Accept All Trackings")
     private WebElement acceptCookies;
 
-    @FindBy(id = "menuButton")
+    @AndroidFindBy(id = "menu_button")
     private WebElement menuButton;
 
     @AndroidFindBy(id = "Highlights")
-    @iOSFindBy(id = "homePage_highlights_button")
+    @iOSXCUITFindBy(id = "homePage_highlights_button")
     private WebElement highLights;
 
 
     @AndroidFindBy(id = "For you")
-    @iOSFindBy(id = "homePage_forYou_button")
+    @iOSXCUITFindBy(id = "homePage_forYou_button")
     private WebElement ForYou;
 
     @AndroidFindBy(id = "id")
-    @iOSFindBy(id = "id")
+    @iOSXCUITFindBy(id = "id")
     private WebElement detailButton;
 
     @AndroidFindBy(id = "at.vienna.ivie.dev:id/current_weather_layout")
-    @iOSFindBy(id = "weatherButton")
+    @iOSXCUITFindBy(id = "weatherButton")
     private WebElement WeatherIcon;
 
     @AndroidFindBy(id = "at.vienna.ivie.dev:id/search_layout")
-    @iOSFindBy(id = "searchButton")
+    @iOSXCUITFindBy(id = "searchButton")
     private WebElement searchButton;
 
     @AndroidFindBy(id = "id")
-    @iOSFindBy(id = "Don’t Allow")
+    @iOSXCUITFindBy(id = "Don’t Allow")
     private WebElement dontAllowNotification;
 
 
     @AndroidFindBy(id = "id")
-    @iOSFindBy(id = "permissionConsentAllowConsentButton")
+    @iOSXCUITFindBy(id = "permissionConsentAllowConsentButton")
     private WebElement permissionConsent;
 
     @AndroidFindBy(id = "id")
-    @iOSFindBy(id = "Ask App Not to Track")
+    @iOSXCUITFindBy(id = "Ask App Not to Track")
     private WebElement askAppNotToTrack;
 
 

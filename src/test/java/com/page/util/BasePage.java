@@ -5,7 +5,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public abstract class BasePage extends MobileDriverInit {
 
@@ -17,8 +17,10 @@ public abstract class BasePage extends MobileDriverInit {
 
     public void initElements(){
         System.out.println("Binding page with driver" + this);
-        PageFactory.initElements(new AppiumFieldDecorator(driver, 60, TimeUnit.SECONDS), this);
+        PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(5)), this);
     }
+
+
 
     public void webElementsAreDisplayed(WebElement[] webElements){
         for (WebElement webElement : webElements) {

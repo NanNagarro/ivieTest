@@ -11,7 +11,30 @@ public class WalksAndGuidesTest extends BasePage {
         new initialRobot()
                 .toHamburgerMenuIndexPage()
                 .goToWalksAndGuidePage()
-                .goOnAWalk();
+                .findWalkKeywords();
     }
 
+    @Test
+    public void testGoOnAGuide()  {
+        new initialRobot()
+                .toHamburgerMenuIndexPage()
+                .goToWalksAndGuidePage()
+                .findGuideKeywords();
+    }
+
+    @Test
+    public void testGoOnAudio()  {
+        new initialRobot()
+                .toHamburgerMenuIndexPage()
+                .goToWalksAndGuidePage()
+                .findAudioIcon();
+    }
+
+    @Test
+    public void testSortByIsClickable()  {
+        new initialRobot()
+                .toHamburgerMenuIndexPage()
+                .goToWalksAndGuidePage()
+                .testSortByIsClickable();
+    }
 }

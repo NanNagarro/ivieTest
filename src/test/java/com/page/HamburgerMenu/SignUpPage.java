@@ -3,28 +3,28 @@ package com.page.HamburgerMenu;
 
 import com.page.util.BasePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 
 public class SignUpPage extends BasePage {
     @AndroidFindBy(id = "email_edit_text")
-    @iOSFindBy(id = "")
+    @iOSXCUITFindBy(id = "")
     private WebElement email_edit_text;
 
     @AndroidFindBy(id = "password_edit_text")
-    @iOSFindBy(id = "")
+    @iOSXCUITFindBy(id = "")
     private WebElement password_edit_text;
 
     @AndroidFindBy(id = "login_btn")
-    @iOSFindBy(id = "")
+    @iOSXCUITFindBy(id = "")
     private WebElement login_btn;
 
     @AndroidFindBy(id = "facebook_btn")
-    @iOSFindBy(id = "")
+    @iOSXCUITFindBy(id = "")
     private WebElement facebook_btn;
 
     @AndroidFindBy(id = "google_btn")
-    @iOSFindBy(id = "")
+    @iOSXCUITFindBy(id = "")
     private WebElement google_btn;
 
     public SignUpPage inputEmail()  {
