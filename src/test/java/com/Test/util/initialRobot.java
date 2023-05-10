@@ -21,7 +21,7 @@ public class initialRobot extends BasePage {
         }
         else{
             return tp.toHomePage()
-                    .acceptCookies()
+                    //.acceptCookies
                     .menuButtonClick();
         }
     }

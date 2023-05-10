@@ -22,7 +22,8 @@ public class DeviceList {
                 new Device("3", PLATFORM_NAME.ANDROID, "10.0", "9FK0219418005732", "", "Uiautomator2", "HuaweiP30", true),
                 new Device("4", PLATFORM_NAME.ANDROID, "13.0", "emulator-5554", "", "Uiautomator2", "NanAndroidEmulator", true),
                 new Device("5", PLATFORM_NAME.ANDROID, "9.0", "Google Pixel 3", "", "Uiautomator2", "", false),
-                new Device("6", PLATFORM_NAME.ANDROID, "11.0", "OnePlus 9", "", "Uiautomator2", "", false));
+                new Device("6", PLATFORM_NAME.ANDROID, "11.0", "OnePlus 9", "", "Uiautomator2", "", false),
+                new Device("7", PLATFORM_NAME.ANDROID, "13.0", "Pixel_6_API_33", "", "Uiautomator2", "", true));
     }
 
     public static List<Device> getFilteredDevices() {
