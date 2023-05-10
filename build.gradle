@@ -20,7 +20,7 @@ dependencies {
 
     implementation(
             "io.appium:java-client:8.4.0",
-            "org.seleniumhq.selenium:selenium-support:4.0.0"
+            "org.seleniumhq.selenium:selenium-support:4.9.1"
     )
 }
 

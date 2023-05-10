@@ -1,10 +1,21 @@
 package com.page.HamburgerMenu;
 
+import com.page.util.BasePage;
+import com.util.deviceSettings.Android.LocationPopup;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 
-public class MapPage {
+import static com.util.executeCommand.ADBCommandExecutor.adbCommand;
+import static org.openqa.selenium.Platform.ANDROID;
+import static org.testng.AssertJUnit.assertTrue;
+
+public class MapPage extends BasePage {
+
+    @AndroidFindBy(id = "user_location")
+    @iOSXCUITFindBy(id = "Tourist Info Vienna Airport")
+    private WebElement locationButton;
 
     @AndroidFindBy(id = "btn_accept_cookies")
     @iOSXCUITFindBy(id = "Tourist Info Vienna Airport")
@@ -50,5 +61,24 @@ public class MapPage {
     @iOSXCUITFindBy(id = "Utilities")
     private WebElement utilitiesButton;
 
+    public MapPage clickLocationButton(){
+        Platform platformName = driver.getCapabilities().getPlatformName();
+        if (platformName == ANDROID) {
+            adbCommand("RFCR310WZXT", "android.permission.ACCESS_COARSE_LOCATION", false);
+            LocationPopup lp = new LocationPopup();
+            lp.clickAlwaysAllowed();
+            lp.yesButtonClicked();
+            lp.backClicked();
+        }
+        // For IOS Bridge
+        else{
+
+        }
+
+
+        assertTrue(locationButton.isDisplayed());
+
+        return this;
+    }
 
 }

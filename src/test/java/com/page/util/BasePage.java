@@ -9,11 +9,9 @@ import java.time.Duration;
 
 public abstract class BasePage extends MobileDriverInit {
 
-
     public BasePage() {
         initElements();
     }
-
 
     public void initElements(){
         System.out.println("Binding page with driver" + this);

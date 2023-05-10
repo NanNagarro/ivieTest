@@ -4,16 +4,13 @@ import com.page.util.BasePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import static com.util.helpers.Action.swipeUp;
-import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 import static java.lang.Thread.sleep;
 import static org.testng.Assert.assertEquals;
@@ -100,7 +97,7 @@ public class WalksAndGuidePage extends BasePage {
         boolean ResultContainsKeyWordFlag = TRUE;
         boolean containsKeyWordFlag;
 
-        // Swipe 4 times to iterate all Guide entries
+        // Swipe 5 times to iterate all Guide entries
         for (int i =0; i<4; i++){
             textFinder =driver.findElements(By.id("locationName"));
             for (WebElement element: textFinder) {
@@ -133,8 +130,7 @@ public class WalksAndGuidePage extends BasePage {
     }
 
     public WalksAndGuidePage testSortByIsClickable() {
-        WebElement spinner =  driver.findElement(By.id("spinner_item_text"));
-        assertTrue(spinner.isEnabled());
+        assertTrue(sortedBy.isEnabled());
         return this;
     }
 

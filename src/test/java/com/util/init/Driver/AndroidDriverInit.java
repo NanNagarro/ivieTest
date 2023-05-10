@@ -6,6 +6,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static io.appium.java_client.remote.MobileCapabilityType.FULL_RESET;
+
 public class AndroidDriverInit extends MobileDriverInit {
 
     public AndroidDriverInit() {
@@ -15,6 +17,12 @@ public class AndroidDriverInit extends MobileDriverInit {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         URL serverUrl;
+
+        capabilities.setCapability(FULL_RESET, true);
+        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("deviceName",device.getDeviceName() ); //RFCR310WZXT
+        capabilities.setCapability("platformVersion", device.getPlatformVersion());
+        capabilities.setCapability("automationName", device.getAutomationName());
 
         if (device.getLocal()){
             serverUrl = new URL("http://127.0.0.1:4723/wd/hub");
@@ -27,10 +35,8 @@ public class AndroidDriverInit extends MobileDriverInit {
             capabilities.setCapability("app_url", "bs://52cd3f404a59054a0d2079d0f7cedfb91cdcb6b2");
         }
 
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("deviceName",device.getDeviceName() ); //RFCR310WZXT
-        capabilities.setCapability("platformVersion", device.getPlatformVersion());
-        capabilities.setCapability("automationName", device.getAutomationName());
+
+
         driver = new AndroidDriver(serverUrl, capabilities);
         return (AndroidDriver) driver;
     }

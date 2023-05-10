@@ -1,8 +1,7 @@
 package com.util.init.Driver;
 
 import io.appium.java_client.AppiumDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
