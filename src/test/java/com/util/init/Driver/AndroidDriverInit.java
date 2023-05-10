@@ -18,7 +18,7 @@ public class AndroidDriverInit extends MobileDriverInit {
 
         if (device.getLocal()){
             serverUrl = new URL("http://127.0.0.1:4723/wd/hub");
-            capabilities.setCapability("app", "C:/Software/apk/app-debug.apk");
+            capabilities.setCapability("app", "/Users/christophubleis/Desktop/WTV/AndroidAutomation/iVieAndroid/Application/app-debug.apk");
         }
         else{
             serverUrl = new URL("http://hub.browserstack.com/wd/hub");

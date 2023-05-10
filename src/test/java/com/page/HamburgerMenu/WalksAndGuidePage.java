@@ -27,15 +27,15 @@ public class WalksAndGuidePage extends BasePage {
 
     // TODO: 05.05.2023 sort by items id are all the same.
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[1]")
-    @iOSXCUITFindBy(xpath = "")
+    @iOSXCUITFindBy(xpath = "id")
     private WebElement sortedByTopWalks;
 
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[2]")
-    @iOSXCUITFindBy(xpath = "")
+    @iOSXCUITFindBy(xpath = "id")
     private WebElement sortedByAlphabetical;
 
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[3]")
-    @iOSXCUITFindBy(xpath = "")
+    @iOSXCUITFindBy(xpath = "id")
     private WebElement sortedByMyInterests;
 
 
@@ -100,8 +100,8 @@ public class WalksAndGuidePage extends BasePage {
         boolean ResultContainsKeyWordFlag = TRUE;
         boolean containsKeyWordFlag;
 
-        // Swipe 4 times to iterate all Guide entries
-        for (int i =0; i<4; i++){
+        // Swipe 4 times to iterate all Guide entries, in ios we need 5 times and id not works
+        for (int i =0; i<5; i++){
             textFinder =driver.findElements(By.id("locationName"));
             for (WebElement element: textFinder) {
                 containsKeyWordFlag = element.getText().matches(".*Guide*");

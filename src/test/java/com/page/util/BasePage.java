@@ -17,7 +17,7 @@ public abstract class BasePage extends MobileDriverInit {
 
     public void initElements(){
         System.out.println("Binding page with driver" + this);
-        PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(5)), this);
+        PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
     }
 
 
