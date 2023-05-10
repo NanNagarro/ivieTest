@@ -1,5 +1,6 @@
 package com.Test.util;
 
+import com.page.home.HomeHighLightsPage;
 import com.page.util.HamburgerMenuIndexPage;
 import com.page.util.TutorialPage;
 import com.page.util.BasePage;
@@ -21,8 +22,25 @@ public class initialRobot extends BasePage {
         }
         else{
             return tp.toHomePage()
-                    //.acceptCookies
+                    .acceptCookies()
                     .menuButtonClick();
+        }
+    }
+
+
+    public HomeHighLightsPage toHomePage()  {
+        TutorialPage tp = new TutorialPage();
+        Configuration configuration = new Configuration();
+        PLATFORM_NAME platform_name = PLATFORM_NAME.valueOf(configuration.getPropertyValues("platformName"));
+
+        if (platform_name==PLATFORM_NAME.IOS){
+            return tp.toHomePage()
+                    .acceptCookies()
+                    .acceptNoTrackingOnIOS();
+        }
+        else{
+            return tp.toHomePage()
+                    .acceptCookies();
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.page.util;
 
-import com.page.HamburgerMenu.HomePage;
+import com.page.home.HomeHighLightsPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import static com.util.helpers.Action.swipeToLeftAction;
@@ -27,12 +27,12 @@ public class TutorialPage extends BasePage {
         swipeToLeftAction(tutorialImage);
     }
 
-    public HomePage toHomePage() {
+    public HomeHighLightsPage toHomePage() {
         tutorialImageSwipeLeft();
         tutorialImageSwipeLeft();
         tutorialImageSwipeLeft();
         skipButton.click();
-        HomePage hp = new HomePage();
+        HomeHighLightsPage hp = new HomeHighLightsPage();
         return  hp;
     }
 

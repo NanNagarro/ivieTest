@@ -1,4 +1,4 @@
-package com.page.HamburgerMenu;
+package com.page.walksAndGuides;
 
 import com.page.util.BasePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;

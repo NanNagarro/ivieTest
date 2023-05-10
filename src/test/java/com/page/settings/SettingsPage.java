@@ -1,4 +1,4 @@
-package com.page.HamburgerMenu;
+package com.page.settings;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;

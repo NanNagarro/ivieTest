@@ -31,7 +31,6 @@ public class DeviceList {
         return stream
                 .filter(x -> x.getPlatformName() == platform_name)
                 .filter(x -> x.getLocal() == localFlag)
-
                 .filter(x -> Objects.equals(x.getDeviceName(), "RFCR310WZXT"))
                 .collect(Collectors.toList());
     }

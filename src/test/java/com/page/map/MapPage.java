@@ -1,4 +1,4 @@
-package com.page.HamburgerMenu;
+package com.page.map;
 
 import com.page.util.BasePage;
 import com.util.deviceSettings.Android.LocationPopup;

@@ -1,6 +1,15 @@
 package com.page.util;
 
-import com.page.HamburgerMenu.*;
+import com.page.cityCard.CityCardPage;
+import com.page.events.EventsPage;
+import com.page.home.HomeHighLightsPage;
+import com.page.ivieTips.IvieTipsPage;
+import com.page.map.MapPage;
+import com.page.myLocations.MyLocationsPage;
+import com.page.settings.SettingsPage;
+import com.page.signup.SignUpPage;
+import com.page.touristInfo.TouristInfoPage;
+import com.page.walksAndGuides.WalksAndGuidePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
@@ -51,9 +60,9 @@ public class HamburgerMenuIndexPage extends BasePage {
         return new SignUpPage();
     }
 
-    public HomePage goToHomePage() {
+    public HomeHighLightsPage goToHomePage() {
         home.click();
-        return  new HomePage();
+        return  new HomeHighLightsPage();
     }
 
     public MapPage goToMapPage() {

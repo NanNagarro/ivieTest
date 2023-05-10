@@ -1,15 +1,16 @@
-package com.page.util;
+package com.page.home;
 
+import com.page.util.BasePage;
+import com.page.util.ChooseInterests;
+import com.page.util.ForYouAfterSetup;
+import com.page.util.SignUpForProfilDialog;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 
 import static com.util.helpers.Action.swipeToLeftAction;
-import static com.util.helpers.Action.swipeUp;
-import static java.lang.Boolean.TRUE;
 
-
-public class ForYouPageConfig extends BasePage{
+public class HomeForYouPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"For you\"]/android.widget.TextView")
     @iOSXCUITFindBy(id = "homePage_forYou_button")
     private WebElement ForYou;
@@ -52,8 +53,7 @@ public class ForYouPageConfig extends BasePage{
     private WebElement HomeButtonSmall;
 
 
-    public ForYouPageConfig ForYouPageConfig() {
-        HomeButtonSmall.click();
+    public HomeForYouPage ForYouPageConfig() {
         ForYou.click();
         CheckboxConsent.click();
         OkLetsGetStartedButton.click();

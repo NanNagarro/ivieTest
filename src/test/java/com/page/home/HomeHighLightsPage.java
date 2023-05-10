@@ -1,19 +1,18 @@
-package com.page.HamburgerMenu;
+package com.page.home;
 
 import com.page.util.BasePage;
 import com.page.util.HamburgerMenuIndexPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 
-public class HomePage extends BasePage {
+public class HomeHighLightsPage extends BasePage {
     @AndroidFindBy(id = "btn_accept_cookies")
     @iOSXCUITFindBy(id = "Accept All Trackings")
     private WebElement acceptCookies;
 
-    @AndroidFindBy(id = "menu_button")
+    @AndroidFindBy(id = "menuButton")
     private WebElement menuButton;
 
     @AndroidFindBy(id = "Highlights")
@@ -52,12 +51,12 @@ public class HomePage extends BasePage {
 
 
 
-    public HomePage acceptCookies()  {
+    public HomeHighLightsPage acceptCookies()  {
         acceptCookies.click();
         return this;
     }
 
-    public HomePage acceptNoTrackingOnIOS()  {
+    public HomeHighLightsPage acceptNoTrackingOnIOS()  {
         permissionConsent.click();
         askAppNotToTrack.click();
 

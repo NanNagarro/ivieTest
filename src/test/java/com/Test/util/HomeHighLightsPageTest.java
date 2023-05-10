@@ -3,7 +3,7 @@ package com.Test.util;
 import com.page.util.BasePage;
 import org.testng.annotations.Test;
 
-public class HomePageTest extends BasePage {
+public class HomeHighLightsPageTest extends BasePage {
 
     @Test
     public void goToSignUpPage() throws InterruptedException {

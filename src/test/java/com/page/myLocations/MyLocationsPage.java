@@ -1,4 +1,4 @@
-package com.page.HamburgerMenu;
+package com.page.myLocations;
 
 public class MyLocationsPage {
 }
