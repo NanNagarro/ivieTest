@@ -1,7 +1,7 @@
 package com.page.home;
 
-import com.page.util.BasePage;
-import com.page.util.HamburgerMenuIndexPage;
+import com.page.BasePage;
+import com.page.HamburgerMenuIndexPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
@@ -20,7 +20,7 @@ public class HomeHighLightsPage extends BasePage {
     private WebElement highLights;
 
 
-    @AndroidFindBy(id = "For you")
+    @AndroidFindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"For you\"]/android.widget.TextView")
     @iOSXCUITFindBy(id = "homePage_forYou_button")
     private WebElement ForYou;
 
@@ -74,6 +74,12 @@ public class HomeHighLightsPage extends BasePage {
     public void detailButtonClick() throws InterruptedException {
         detailButton.click();
         Thread.sleep(100000);
+    }
+
+    public HomeForYouPage ForYouButtonClick()  {
+        HomeForYouPage homeForYouPage = new HomeForYouPage();
+        ForYou.click();
+        return homeForYouPage;
     }
 
 

@@ -1,7 +1,7 @@
 package com.Test.RegressionTest;
 
 import com.Test.util.initialRobot;
-import com.page.util.BasePage;
+import com.page.BasePage;
 import org.testng.annotations.Test;
 
 public class WalksAndGuidesTest extends BasePage {

@@ -1,6 +1,6 @@
 package com.util.deviceSettings.Android;
 
-import com.page.util.BasePage;
+import com.page.BasePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 

@@ -1,6 +1,6 @@
 package com.page.map;
 
-import com.page.util.BasePage;
+import com.page.BasePage;
 import com.util.deviceSettings.Android.LocationPopup;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;

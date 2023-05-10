@@ -1,4 +1,4 @@
-package com.page.util;
+package com.page;
 
 import com.util.init.Driver.MobileDriverInit;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;

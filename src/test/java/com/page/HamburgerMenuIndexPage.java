@@ -1,4 +1,4 @@
-package com.page.util;
+package com.page;
 
 import com.page.cityCard.CityCardPage;
 import com.page.events.EventsPage;

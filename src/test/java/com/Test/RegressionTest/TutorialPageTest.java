@@ -1,7 +1,7 @@
 package com.Test.RegressionTest;
 
-import com.page.util.BasePage;
-import com.page.util.TutorialPage;
+import com.page.BasePage;
+import com.page.TutorialPage;
 import org.testng.annotations.Test;
 
 public class TutorialPageTest extends BasePage {

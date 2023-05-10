@@ -1,43 +1,40 @@
 package com.Test.PersonalisationTest;
 
 import com.Test.util.initialRobot;
-import com.page.util.BasePage;
-import com.page.home.HomeForYouPage;
+import com.page.BasePage;
 import org.testng.annotations.Test;
 
 
 public class Personalisationtests extends BasePage {
     @Test
     public void consentForUser() {
-        new initialRobot().toHomePage();
-
-        new HomeForYouPage()
+        new initialRobot()
+                .toHomePage()
+                .ForYouButtonClick()
                 .ForYouPageConfig();
+
     }
     @Test
     public void chooseInterestsTest() {
         new initialRobot()
-                .toHamburgerMenuIndexPage()
-                .goToHomePage();
-        new HomeForYouPage()
+                .toHomePage()
+                .ForYouButtonClick()
                 .ChooseInterests();
     }
 
     @Test
     public void signUpForProfilDialogTest() {
         new initialRobot()
-                .toHamburgerMenuIndexPage()
-                .goToHomePage();
-        new HomeForYouPage()
+                .toHomePage()
+                .ForYouButtonClick()
                 .SignUpForProfilDialog();
     }
 
     @Test
     public void forYouTabTest() {
         new initialRobot()
-                .toHamburgerMenuIndexPage()
-                .goToHomePage();
-        new HomeForYouPage()
+                .toHomePage()
+                .ForYouButtonClick()
                 .ForYouAfterSetup();
 
     }
@@ -49,7 +46,10 @@ public class Personalisationtests extends BasePage {
 
     @Test
     public void settingsMyInterestsTest() {
-
+        new initialRobot()
+                .toHomePage()
+                .ForYouButtonClick()
+                .ForYouAfterSetup();
     }
 
 

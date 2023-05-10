@@ -1,9 +1,9 @@
 package com.Test.util;
 
 import com.page.home.HomeHighLightsPage;
-import com.page.util.HamburgerMenuIndexPage;
-import com.page.util.TutorialPage;
-import com.page.util.BasePage;
+import com.page.HamburgerMenuIndexPage;
+import com.page.TutorialPage;
+import com.page.BasePage;
 import com.util.init.PLATFORM_NAME;
 import com.util.init.config.Configuration;
 

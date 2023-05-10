@@ -1,6 +1,6 @@
 package com.Test.util;
 
-import com.page.util.BasePage;
+import com.page.BasePage;
 import org.testng.annotations.Test;
 
 public class HomeHighLightsPageTest extends BasePage {

@@ -1,4 +1,4 @@
-package com.page.util;
+package com.page;
 
 import com.page.home.HomeHighLightsPage;
 import org.openqa.selenium.WebElement;

@@ -1,4 +1,4 @@
-package com.page.util;
+package com.page.home;
 
 public class ForYouPageChooseInterests {
 }
