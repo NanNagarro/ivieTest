@@ -1,11 +1,11 @@
-package com.util.executeCommand;
+package com.helpers.executeCommand;
 
 import java.io.IOException;
 
 public class ADBCommandExecutor {
 
     public static void adbCommand(String serialNumber, String permission, Boolean grantFlag) {
-          String packageName = "at.vienna.ivie.dev";
+        String packageName = "at.vienna.ivie.dev";
 
         // Construct the ADB command
         String[] adbCommand;
@@ -15,7 +15,6 @@ public class ADBCommandExecutor {
         } else {
             adbCommand = new String[]{"adb", "-s", serialNumber, "shell", "pm", "revoke", packageName, permission};
         }
-
 
         try {
             // Execute the ADB command

@@ -1,4 +1,4 @@
-package com.util.init.Driver;
+package com.helpers.init.driver;
 
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -15,21 +15,23 @@ public class IosDriverInit extends MobileDriverInit{
         DesiredCapabilities capabilities = new DesiredCapabilities();
         URL serverUrl;
 
-        if (device.getLocal()){
-            serverUrl = new URL("http://127.0.0.1:4723/wd/hub");
-            capabilities.setCapability("app", "/Users/christophubleis/Library/Developer/Xcode/DerivedData/ivie-bzinybpwuwunkgclitqehaobrfzf/Build/Products/Debug-iphonesimulator/ivie.app");
-        }
-        else{
-            serverUrl = new URL("http://hub.browserstack.com/wd/hub");
-            capabilities.setCapability("browserstack.user", "nanli_kwsMtj");
-            capabilities.setCapability("browserstack.key", "Z5PhssPR6JViB2yWaTzd");
-        }
-
         capabilities.setCapability("platformName", "iOS");
         capabilities.setCapability("deviceName", device.getDeviceName());
         capabilities.setCapability("platformVersion", device.getPlatformVersion());
         capabilities.setCapability("udid", device.getUdid());
         capabilities.setCapability("automationName", device.getAutomationName());
+
+        if (device.getLocal()){
+            serverUrl = new URL(localUrl);
+            capabilities.setCapability("app", iosBuildPath);
+        }
+        else{
+            serverUrl = new URL(localUrl);
+            capabilities.setCapability("browserstack.user", remoteUser);
+            capabilities.setCapability("browserstack.key", remoteKey);
+        }
+
+
         driver = new IOSDriver(serverUrl, capabilities);
         return (IOSDriver) driver;
     }

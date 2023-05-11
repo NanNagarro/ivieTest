@@ -5,7 +5,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 
-import static com.util.helpers.Action.swipeToLeftAction;
+import static com.helpers.helperActions.Action.swipeToLeftAction;
 
 public class HomeForYouPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"For you\"]/android.widget.TextView")

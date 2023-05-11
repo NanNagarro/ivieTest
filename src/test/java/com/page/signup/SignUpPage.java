@@ -1,12 +1,16 @@
 package com.page.signup;
 
-
 import com.page.BasePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 
 public class SignUpPage extends BasePage {
+
+    @AndroidFindBy(id = "Register")
+    @iOSXCUITFindBy(id = "")
+    private WebElement register;
+
     @AndroidFindBy(id = "email_edit_text")
     @iOSXCUITFindBy(id = "")
     private WebElement email_edit_text;
@@ -19,6 +23,14 @@ public class SignUpPage extends BasePage {
     @iOSXCUITFindBy(id = "")
     private WebElement login_btn;
 
+    @AndroidFindBy(id = "show_hide_password_button")
+    @iOSXCUITFindBy(id = "")
+    private WebElement show_hide_password_button;
+
+    @AndroidFindBy(id = "forgot_password_btn")
+    @iOSXCUITFindBy(id = "")
+    private WebElement forgot_password_btn;
+
     @AndroidFindBy(id = "facebook_btn")
     @iOSXCUITFindBy(id = "")
     private WebElement facebook_btn;
@@ -27,30 +39,28 @@ public class SignUpPage extends BasePage {
     @iOSXCUITFindBy(id = "")
     private WebElement google_btn;
 
-    public SignUpPage inputEmail()  {
-        email_edit_text.sendKeys("test@abc.com");
+    public SignUpPage inputEmail(String email)  {
+        email_edit_text.sendKeys(email);
         return this;
     }
 
-    public SignUpPage inputPassword()  {
-        password_edit_text.sendKeys("abc");
+    public SignUpPage inputPassword(String password)  {
+        password_edit_text.sendKeys(password);
         return this;
     }
 
     public SignUpPage login()  {
-        email_edit_text.click();
+        login_btn.click();
         return this;
     }
 
-    public BasePage facebookLogin() throws InterruptedException {
+    public BasePage facebookLogin() {
         facebook_btn.click();
-        Thread.sleep(100000);
         return this;
     }
 
-    public  BasePage googleLogin() throws InterruptedException {
+    public  BasePage googleLogin() {
         google_btn.click();
-        Thread.sleep(100000);
         return this;
     }
 

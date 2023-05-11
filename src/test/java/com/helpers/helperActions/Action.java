@@ -1,7 +1,6 @@
-package com.util.helpers;
+package com.helpers.helperActions;
 
-import com.util.init.Driver.MobileDriverInit;
-import io.appium.java_client.TouchAction;
+import com.helpers.init.driver.MobileDriverInit;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;

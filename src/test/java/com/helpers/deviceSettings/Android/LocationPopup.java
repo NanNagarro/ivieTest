@@ -1,4 +1,4 @@
-package com.util.deviceSettings.Android;
+package com.helpers.deviceSettings.Android;
 
 import com.page.BasePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;

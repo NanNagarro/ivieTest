@@ -3,7 +3,7 @@ package com.page;
 import com.page.home.HomeHighLightsPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import static com.util.helpers.Action.swipeToLeftAction;
+import static com.helpers.helperActions.Action.swipeToLeftAction;
 
 public class TutorialPage extends BasePage {
 

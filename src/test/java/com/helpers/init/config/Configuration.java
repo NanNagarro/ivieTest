@@ -1,4 +1,4 @@
-package com.util.init.config;
+package com.helpers.init.config;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -6,10 +6,9 @@ import java.util.Properties;
 
 public class Configuration {
 
-    static String propFileName = "config.properties";
     static Properties prop = new Properties();
 
-    public String getPropertyValues(String key)  {
+    public String getPropertyValues(String propFileName, String key)  {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
         try {
             prop.load(inputStream);
@@ -18,9 +17,5 @@ public class Configuration {
         }
         return prop.getProperty(key);
     }
-
-
-
-
 
 }

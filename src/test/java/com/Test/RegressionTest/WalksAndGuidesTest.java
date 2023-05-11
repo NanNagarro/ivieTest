@@ -1,6 +1,6 @@
 package com.Test.RegressionTest;
 
-import com.Test.util.initialRobot;
+import com.Test.base.InitialRobot;
 import com.page.BasePage;
 import org.testng.annotations.Test;
 
@@ -8,7 +8,7 @@ public class WalksAndGuidesTest extends BasePage {
 
     @Test
     public void testGoOnAWalk()  {
-        new initialRobot()
+        new InitialRobot()
                 .toHamburgerMenuIndexPage()
                 .goToWalksAndGuidePage()
                 .findWalkKeywords();
@@ -16,7 +16,7 @@ public class WalksAndGuidesTest extends BasePage {
 
     @Test
     public void testGoOnAGuide()  {
-        new initialRobot()
+        new InitialRobot()
                 .toHamburgerMenuIndexPage()
                 .goToWalksAndGuidePage()
                 .findGuideKeywords();
@@ -24,7 +24,7 @@ public class WalksAndGuidesTest extends BasePage {
 
     @Test
     public void testGoOnAudio()  {
-        new initialRobot()
+        new InitialRobot()
                 .toHamburgerMenuIndexPage()
                 .goToWalksAndGuidePage()
                 .findAudioIcon();
@@ -32,7 +32,7 @@ public class WalksAndGuidesTest extends BasePage {
 
     @Test
     public void testSortByIsClickable()  {
-        new initialRobot()
+        new InitialRobot()
                 .toHamburgerMenuIndexPage()
                 .goToWalksAndGuidePage()
                 .testSortByIsClickable();

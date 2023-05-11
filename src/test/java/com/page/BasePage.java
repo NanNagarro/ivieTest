@@ -1,13 +1,13 @@
 package com.page;
 
-import com.util.init.Driver.MobileDriverInit;
+import com.helpers.init.driver.MobileDriverInit;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
-public abstract class BasePage extends MobileDriverInit {
+public class BasePage extends MobileDriverInit {
 
     public BasePage() {
         initElements();
@@ -17,8 +17,6 @@ public abstract class BasePage extends MobileDriverInit {
         System.out.println("Binding page with driver" + this);
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
     }
-
-
 
     public void webElementsAreDisplayed(WebElement[] webElements){
         for (WebElement webElement : webElements) {

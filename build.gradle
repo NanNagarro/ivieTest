@@ -12,7 +12,7 @@ repositories {
 
 dependencies {
     testImplementation (
-            platform("org.junit:junit-bom:5.9.1"),
+            platform("org.junit:junit-bom:5.9.3"),
             "org.junit.jupiter:junit-jupiter",
             "org.testng:testng:7.7.1",
             "org.assertj:assertj-core:3.24.2"
@@ -20,7 +20,7 @@ dependencies {
 
     implementation(
             "io.appium:java-client:8.4.0",
-            "org.seleniumhq.selenium:selenium-support:4.9.1"
+            "org.seleniumhq.selenium:selenium-support:4.9.1",
     )
 }
 

@@ -1,20 +1,22 @@
-package com.Test.util;
+package com.Test.base;
 
 import com.page.home.HomeHighLightsPage;
 import com.page.HamburgerMenuIndexPage;
 import com.page.TutorialPage;
 import com.page.BasePage;
-import com.util.init.PLATFORM_NAME;
-import com.util.init.config.Configuration;
+import com.helpers.init.config.Configuration;
 
-public class initialRobot extends BasePage {
+import java.util.Objects;
+
+public class InitialRobot extends BasePage {
 
     public HamburgerMenuIndexPage toHamburgerMenuIndexPage()  {
-        TutorialPage tp = new TutorialPage();
         Configuration configuration = new Configuration();
-        PLATFORM_NAME platform_name = PLATFORM_NAME.valueOf(configuration.getPropertyValues("platformName"));
+        String platform_name = configuration.getPropertyValues("config.properties","platformName");
 
-        if (platform_name==PLATFORM_NAME.IOS){
+        TutorialPage tp = new TutorialPage();
+
+        if (Objects.equals(platform_name, "iOS")){
             return tp.toHomePage()
                 .acceptCookies()
                 .acceptNoTrackingOnIOS()
@@ -27,13 +29,13 @@ public class initialRobot extends BasePage {
         }
     }
 
-
     public HomeHighLightsPage toHomePage()  {
-        TutorialPage tp = new TutorialPage();
         Configuration configuration = new Configuration();
-        PLATFORM_NAME platform_name = PLATFORM_NAME.valueOf(configuration.getPropertyValues("platformName"));
+        String platform_name = configuration.getPropertyValues("config.properties","platformName");
 
-        if (platform_name==PLATFORM_NAME.IOS){
+        TutorialPage tp = new TutorialPage();
+
+        if (Objects.equals(platform_name, "Ios")){
             return tp.toHomePage()
                     .acceptCookies()
                     .acceptNoTrackingOnIOS();

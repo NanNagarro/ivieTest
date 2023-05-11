@@ -71,9 +71,8 @@ public class HomeHighLightsPage extends BasePage {
         return hamburgerMenuIndexPage;
     }
 
-    public void detailButtonClick() throws InterruptedException {
+    public void detailButtonClick() {
         detailButton.click();
-        Thread.sleep(100000);
     }
 
     public HomeForYouPage ForYouButtonClick()  {

@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static com.util.helpers.Action.swipeUp;
+import static com.helpers.helperActions.Action.swipeUp;
 import static java.lang.Boolean.TRUE;
 import static java.lang.Thread.sleep;
 import static org.testng.Assert.assertEquals;
@@ -94,7 +94,6 @@ public class WalksAndGuidePage extends BasePage {
         List<WebElement> textFinder;
         Set<String> guideSet = new HashSet<>();
 
-        boolean ResultContainsKeyWordFlag = TRUE;
         boolean containsKeyWordFlag;
 
         // Swipe 5 times to iterate all Guide entries, in ios we need 5 times and id not works
@@ -107,11 +106,6 @@ public class WalksAndGuidePage extends BasePage {
                 }
             }
             swipeUp(TRUE);
-            try {
-                sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
         }
 
         int size =  guideSet.size();
