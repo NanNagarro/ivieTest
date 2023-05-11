@@ -10,10 +10,10 @@ public class IosDriverInit extends MobileDriverInit{
     public IosDriverInit() {
     }
 
-    public static IOSDriver IosSetupAppium(Device device) throws MalformedURLException {
+    public static IOSDriver IosSetupAppium(Device device)  {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        URL serverUrl;
+        String serverUrl;
 
         capabilities.setCapability("platformName", "iOS");
         capabilities.setCapability("deviceName", device.getDeviceName());
@@ -22,17 +22,20 @@ public class IosDriverInit extends MobileDriverInit{
         capabilities.setCapability("automationName", device.getAutomationName());
 
         if (device.getLocal()){
-            serverUrl = new URL(localUrl);
+            serverUrl = localUrl;
             capabilities.setCapability("app", iosBuildPath);
         }
         else{
-            serverUrl = new URL(localUrl);
+            serverUrl = remoteUrl;
             capabilities.setCapability("browserstack.user", remoteUser);
             capabilities.setCapability("browserstack.key", remoteKey);
         }
 
-
-        driver = new IOSDriver(serverUrl, capabilities);
+        try {
+            driver = new IOSDriver(new URL(serverUrl), capabilities);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
         return (IOSDriver) driver;
     }
 }

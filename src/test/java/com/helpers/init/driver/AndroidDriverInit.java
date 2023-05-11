@@ -11,10 +11,10 @@ public class AndroidDriverInit extends MobileDriverInit {
     public AndroidDriverInit() {
     }
 
-    public static AndroidDriver androidSetupAppium(Device device) throws MalformedURLException {
+    public static AndroidDriver androidSetupAppium(Device device) {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        URL serverUrl;
+        String serverUrl;
 
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("deviceName",device.getDeviceName());
@@ -22,17 +22,21 @@ public class AndroidDriverInit extends MobileDriverInit {
         capabilities.setCapability("automationName", device.getAutomationName());
 
         if (device.getLocal()){
-            serverUrl = new URL(localUrl);
+            serverUrl = localUrl;
             capabilities.setCapability("app", androidBuildPath);
         }
 
         else{
-            serverUrl = new URL(remoteUrl);
+            serverUrl = remoteUrl;
             capabilities.setCapability("user", remoteUser);
             capabilities.setCapability("key", remoteKey);
         }
 
-        driver = new AndroidDriver(serverUrl, capabilities);
+        try {
+            driver = new AndroidDriver(new URL(serverUrl), capabilities);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
         return (AndroidDriver) driver;
     }
 

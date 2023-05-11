@@ -2,13 +2,11 @@ package com.helpers.init.driver;
 
 import com.helpers.init.config.Configuration;
 import io.appium.java_client.AppiumDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static com.helpers.init.driver.AndroidDriverInit.androidSetupAppium;
 import static com.helpers.init.driver.DeviceList.deviceGenerator;
@@ -16,6 +14,9 @@ import static com.helpers.init.driver.IosDriverInit.IosSetupAppium;
 
 public class MobileDriverInit {
     public static AppiumDriver driver;
+
+    public static List<Device> deviceList;
+
     static Configuration configuration = new Configuration();
     static String androidBuildPath = String.valueOf(configuration.getPropertyValues("config.properties","androidBuildPath"));
     static String iosBuildPath = String.valueOf(configuration.getPropertyValues("config.properties","iosBuildPath"));
@@ -34,25 +35,26 @@ public class MobileDriverInit {
         return  deviceList;
     }
 
-    @BeforeClass
-    public static void setupAppium() throws IOException {
-
-            Device device = getFilteredDevice().get(0);
-
-            String platFormName = device.getPlatformName();
-
-            switch (platFormName) {
-                case "ANDROID":
-                    driver = androidSetupAppium(device);
-                    break;
-                case "IOS":
-                    driver = IosSetupAppium(device);
-                    break;
-            }
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    // Need multiple appium server for multiple device?
+    @BeforeMethod
+    public static void init() {
+        deviceList = getFilteredDevice();
+        setupAppium(getFilteredDevice().get(0));
     }
 
-    @AfterClass
+    public static void setupAppium(Device device) {
+        String platFormName = device.getPlatformName();
+        switch (platFormName) {
+            case "ANDROID":
+                driver = androidSetupAppium(device);
+                break;
+            case "IOS":
+                driver = IosSetupAppium(device);
+                break;
+        }
+    }
+
+    @AfterMethod
     public void tearDownAppium() {
         if (driver != null) {
             driver.quit();
