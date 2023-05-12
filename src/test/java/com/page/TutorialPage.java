@@ -3,7 +3,9 @@ package com.page;
 import com.page.home.HomeHighLightsPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import static com.helpers.helperActions.Action.swipeToLeftAction;
+
+import static com.helpers.helperActions.Action.Direction.LEFT;
+import static com.helpers.helperActions.Action.swipeInsideHorizontalAction;
 
 public class TutorialPage extends BasePage {
 
@@ -24,7 +26,7 @@ public class TutorialPage extends BasePage {
     }
 
     public void tutorialImageSwipeLeft()  {
-        swipeToLeftAction(tutorialImage);
+        swipeInsideHorizontalAction(tutorialImage, LEFT);
     }
 
     public HomeHighLightsPage toHomePage() {
@@ -32,8 +34,7 @@ public class TutorialPage extends BasePage {
         tutorialImageSwipeLeft();
         tutorialImageSwipeLeft();
         skipButton.click();
-        HomeHighLightsPage hp = new HomeHighLightsPage();
-        return  hp;
+        return  new HomeHighLightsPage();
     }
 
 }

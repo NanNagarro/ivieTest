@@ -8,6 +8,9 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 
 import static com.helpers.executeCommand.ADBCommandExecutor.adbCommand;
+import static com.helpers.helperActions.Action.Direction.LEFT;
+import static com.helpers.helperActions.Action.swipeInsideHorizontalAction;
+import static com.helpers.helperActions.Action.swipeOutsideHorizontalAction;
 import static org.openqa.selenium.Platform.ANDROID;
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -80,10 +83,14 @@ public class MapPage extends BasePage {
         else{
 
         }
-
-
         assertTrue(locationButton.isDisplayed());
+        return this;
+    }
 
+    public MapPage swipeComponent(){
+        swipeOutsideHorizontalAction(parkAndGardenButton,LEFT,50);
+        swipeOutsideHorizontalAction(cuisineButton,LEFT,50);
+        swipeOutsideHorizontalAction(leisureButton,LEFT,50);
         return this;
     }
 

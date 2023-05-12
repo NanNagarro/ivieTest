@@ -11,6 +11,14 @@ public class MapsTest extends BasePage {
                 .toHamburgerMenuIndexPage()
                 .goToMapPage()
                 .clickLocationButton();
+    }
 
+    @Test
+    public void testPoint() {
+        new InitialRobot()
+                .toHamburgerMenuIndexPage()
+                .goToMapPage()
+                .clickLocationButton()
+                .swipeComponent();
     }
 }

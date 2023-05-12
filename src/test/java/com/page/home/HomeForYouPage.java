@@ -5,7 +5,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 
-import static com.helpers.helperActions.Action.swipeToLeftAction;
+import static com.helpers.helperActions.Action.Direction.LEFT;
+import static com.helpers.helperActions.Action.swipeInsideHorizontalAction;
 
 public class HomeForYouPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"For you\"]/android.widget.TextView")
@@ -77,16 +78,9 @@ public class HomeForYouPage extends BasePage {
     public ForYouAfterSetup ForYouAfterSetup() {
 
         SignUpForProfilDialog();
-        swipeToLeftAction(SwipeLeftForYouTab);
-        swipeToLeftAction(SwipeLeftForYouTab);
-        swipeToLeftAction(SwipeLeftForYouTab);
-        swipeToLeftAction(SwipeLeftForYouTab);
-        swipeToLeftAction(SwipeLeftForYouTab);
-        swipeToLeftAction(SwipeLeftForYouTab);
-        swipeToLeftAction(SwipeLeftForYouTab);
-        swipeToLeftAction(SwipeLeftForYouTab);
-        swipeToLeftAction(SwipeLeftForYouTab);
-        swipeToLeftAction(SwipeLeftForYouTab);
+        for (int i=0;i<10;i++){
+            swipeInsideHorizontalAction(SwipeLeftForYouTab,LEFT);
+        }
         return this.ForYouAfterSetup();
     }
 

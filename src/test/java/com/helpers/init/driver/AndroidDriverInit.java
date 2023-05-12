@@ -28,8 +28,10 @@ public class AndroidDriverInit extends MobileDriverInit {
 
         else{
             serverUrl = remoteUrl;
-            capabilities.setCapability("user", remoteUser);
-            capabilities.setCapability("key", remoteKey);
+            capabilities.setCapability("browserstack.user", remoteUser);
+            capabilities.setCapability("browserstack.key", remoteKey);
+            capabilities.setCapability("app_url", "bs://52cd3f404a59054a0d2079d0f7cedfb91cdcb6b2");
+
         }
 
         try {

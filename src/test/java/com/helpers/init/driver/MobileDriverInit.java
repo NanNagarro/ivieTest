@@ -18,13 +18,17 @@ public class MobileDriverInit {
     public static List<Device> deviceList;
 
     static Configuration configuration = new Configuration();
-    static String androidBuildPath = String.valueOf(configuration.getPropertyValues("config.properties","androidBuildPath"));
-    static String iosBuildPath = String.valueOf(configuration.getPropertyValues("config.properties","iosBuildPath"));
-    static String localUrl = String.valueOf(configuration.getPropertyValues("config.properties","localUrl"));
-    static String remoteUrl = String.valueOf(configuration.getPropertyValues("config.properties","remoteUrl"));
-    static String remoteUser = String.valueOf(configuration.getPropertyValues("config.properties","remoteUser"));
-    static String remoteKey = String.valueOf(configuration.getPropertyValues("config.properties","remoteKey"));
-    static String deviceListString = String.valueOf(configuration.getPropertyValues("config.properties","deviceList"));
+    static String androidBuildPath = getValueByKey("androidBuildPath");
+    static String iosBuildPath = getValueByKey("iosBuildPath");
+    static String localUrl = getValueByKey("localUrl");
+    static String remoteUrl = getValueByKey("remoteUrl");
+    static String remoteUser = getValueByKey("remoteUser");
+    static String remoteKey = getValueByKey("remoteKey");
+    static String deviceListString = getValueByKey("deviceList");
+
+    private static String getValueByKey(String key){
+        return String.valueOf(configuration.getPropertyValues("config.properties",key));
+    }
 
     public static List<Device> getFilteredDevice() {
         String[] deviceListNames = deviceListString.split(";");

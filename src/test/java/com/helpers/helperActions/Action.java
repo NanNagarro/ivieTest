@@ -17,31 +17,71 @@ import static org.openqa.selenium.interactions.PointerInput.Origin.viewport;
 
 public class Action extends MobileDriverInit {
 
+    public enum Direction {
+        LEFT,
+        RIGHT,
+        // UP ,DOWN
+    }
+
     private static Dimension screenSize = null;
 
 
-    // TODO: 08.05.2023 Maybe change to swipe left,right to one function?
-    public static void swipeToLeftAction(WebElement  element) {
+    public static void swipeInsideHorizontalAction(WebElement  element , Direction direction) {
         Dimension elementLocation = element.getSize();
         int elementWidth = elementLocation.getWidth();
         int elementHeight = elementLocation.getHeight();
 
-        Point pointOptionStart = new Point(0, 0);
-        pointOptionStart.x = (int)(elementWidth * 0.9);
-        pointOptionStart.y = elementHeight;
-
+        Point pointOptionStart= new Point(0, 0);
         Point pointOptionEnd = new Point(0, 0);
-        pointOptionEnd.x = (int)(elementWidth * 0.1);
-        pointOptionEnd.y = elementHeight;
+
+        if (direction == Direction.LEFT){
+            pointOptionStart.x = (int)(elementWidth * 0.9);
+            pointOptionEnd.x = (int)(elementWidth * 0.1);
+        }
+        else {
+            pointOptionStart.x = (int)(elementWidth * 0.1);
+            pointOptionEnd.x = (int)(elementWidth * 0.9);
+        }
+        pointOptionStart.y = (int) (elementHeight * 0.5);
+        pointOptionEnd.y = (int) (elementHeight * 0.5);
 
         PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH,"finger");
         Sequence swipe = new Sequence(finger, 1);
         swipe.addAction(finger.createPointerMove(ofMillis(0), viewport(), pointOptionStart.getX(), pointOptionStart.getY()))
                 .addAction(finger.createPointerDown(LEFT.asArg()))
-                .addAction(finger.createPointerMove(ofMillis(200), viewport(), pointOptionEnd.getX(), pointOptionEnd.getY()))
+                .addAction(finger.createPointerMove(ofMillis(500), viewport(), pointOptionEnd.getX(), pointOptionEnd.getY()))
                 .addAction(finger.createPointerUp(LEFT.asArg()));
         driver.perform(singletonList(swipe));
     }
+
+    public static void swipeOutsideHorizontalAction(WebElement  element , Direction direction , int percentage) {
+        Point elementLocation = element.getLocation();
+        int elementX = elementLocation.getX();
+        int elementY = elementLocation.getY();
+
+        int screenWidth = getScreenSize().width;
+
+        Point pointOptionStart= new Point(elementX, elementY);
+        Point pointOptionEnd = new Point(0, 0);
+
+        if (direction == Direction.LEFT){
+            pointOptionEnd.x = pointOptionEnd.x -  (percentage/100*screenWidth) ;
+        }
+        else {
+            pointOptionEnd.x =  pointOptionEnd.x + (percentage/100*screenWidth);
+        }
+
+
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH,"finger");
+        Sequence swipe = new Sequence(finger, 1);
+        swipe.addAction(finger.createPointerMove(ofMillis(0), viewport(), pointOptionStart.getX(), pointOptionStart.getY()))
+                .addAction(finger.createPointerDown(LEFT.asArg()))
+                .addAction(finger.createPointerMove(ofSeconds(1), viewport(), pointOptionEnd.getX(), pointOptionEnd.getY()))
+                .addAction(finger.createPointerUp(LEFT.asArg()));
+        driver.perform(singletonList(swipe));
+    }
+
+
 
     public static Dimension getScreenSize() {
         if (screenSize == null) {
