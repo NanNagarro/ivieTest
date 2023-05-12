@@ -35,7 +35,7 @@ public class InitialRobot extends BasePage {
 
         TutorialPage tp = new TutorialPage();
 
-        if (Objects.equals(platform_name, "Ios")){
+        if (Objects.equals(platform_name, "IOS")){
             return tp.toHomePage()
                     .acceptCookies()
                     .acceptNoTrackingOnIOS();
