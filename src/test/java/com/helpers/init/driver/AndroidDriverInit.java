@@ -1,7 +1,7 @@
 package com.helpers.init.driver;
 
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import io.appium.java_client.android.options.UiAutomator2Options;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -13,17 +13,16 @@ public class AndroidDriverInit extends MobileDriverInit {
 
     public static AndroidDriver androidSetupAppium(Device device) {
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+        UiAutomator2Options capabilities = new UiAutomator2Options ();
         String serverUrl;
 
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("deviceName",device.getDeviceName());
-        capabilities.setCapability("platformVersion", device.getPlatformVersion());
-        capabilities.setCapability("automationName", device.getAutomationName());
+        capabilities.setPlatformName("Android");
+        capabilities.setDeviceName(device.getDeviceName());
+        capabilities.setPlatformVersion(device.getPlatformVersion());
 
         if (device.getLocal()){
             serverUrl = localUrl;
-            capabilities.setCapability("app", androidBuildPath);
+            capabilities.setApp(androidBuildPath);
         }
 
         else{

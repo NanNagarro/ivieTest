@@ -1,7 +1,9 @@
 package com.page.map;
 
+import com.helpers.helperActions.Action;
 import com.page.BasePage;
 import com.helpers.deviceSettings.Android.LocationPopup;
+import com.page.signup.SignUpPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.Platform;
@@ -10,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import static com.helpers.executeCommand.ADBCommandExecutor.adbCommand;
 import static com.helpers.helperActions.Action.Direction.LEFT;
 import static com.helpers.helperActions.Action.swipeInsideHorizontalAction;
-import static com.helpers.helperActions.Action.swipeOutsideHorizontalAction;
+import static com.helpers.helperActions.Action.swipeUp;
 import static org.openqa.selenium.Platform.ANDROID;
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -19,6 +21,10 @@ public class MapPage extends BasePage {
     @AndroidFindBy(id = "user_location")
     @iOSXCUITFindBy(id = "Tourist Info Vienna Airport")
     private WebElement locationButton;
+
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Google Map\"]/android.view.View[1]")
+    @iOSXCUITFindBy(id = "Tourist Info Vienna Airport")
+    private WebElement mapCenterButton;
 
     // Bottom sheet part
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/androidx.recyclerview.widget.RecyclerView[1]/androidx.cardview.widget.CardView[1]/android.view.ViewGroup")
@@ -49,7 +55,7 @@ public class MapPage extends BasePage {
     @iOSXCUITFindBy(id = "Leisure & Sport")
     private WebElement leisureButton;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/androidx.recyclerview.widget.RecyclerView[1]/androidx.cardview.widget.CardView[8]/android.view.ViewGroup")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/androidx.recyclerview.widget.RecyclerView[1]/androidx.cardview.widget.CardView[2]/android.view.ViewGroup")
     @iOSXCUITFindBy(id = "Tourist Info")
     private WebElement touristInfoButton;
 
@@ -69,6 +75,25 @@ public class MapPage extends BasePage {
     @iOSXCUITFindBy(id = "Congress Center")
     private WebElement congressCenter;
 
+    @AndroidFindBy(id = "category_menu_list")
+    @iOSXCUITFindBy(id = "Congress Center")
+    private WebElement category_menu_list;
+
+    @AndroidFindBy(id = "view2")
+    @iOSXCUITFindBy(id = "id")
+    private WebElement touristInfoVienna;
+
+    @AndroidFindBy(id = "location_name_xs")
+    @iOSXCUITFindBy(id = "id")
+    private WebElement locationName;
+
+    @AndroidFindBy(id = "mark_as_favorite_xs")
+    @iOSXCUITFindBy(id = "id")
+    private WebElement favoriteButton;
+
+    @AndroidFindBy(id = "button_text")
+    @iOSXCUITFindBy(id = "id")
+    private WebElement createProfileOrLogin;
 
     public MapPage clickLocationButton(){
         Platform platformName = driver.getCapabilities().getPlatformName();
@@ -88,10 +113,45 @@ public class MapPage extends BasePage {
     }
 
     public MapPage swipeComponent(){
-        swipeOutsideHorizontalAction(parkAndGardenButton,LEFT,50);
-        swipeOutsideHorizontalAction(cuisineButton,LEFT,50);
-        swipeOutsideHorizontalAction(leisureButton,LEFT,50);
+        swipeInsideHorizontalAction(category_menu_list,LEFT);
+        swipeInsideHorizontalAction(category_menu_list,LEFT);
         return this;
     }
+
+    public MapPage clickTouristInfo(){
+        touristInfoButton.click();
+        return this;
+    }
+
+    public MapPage clickTouristInfoVienna(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        touristInfoVienna.click();
+        return this;
+    }
+
+    public MapPage swipeUpShowLocationDetails(){
+      swipeUp(true);
+      return this;
+    }
+
+    public MapPage favoriteButtonClick(){
+        favoriteButton.click();
+        return this;
+    }
+
+    public SignUpPage createProfileOrLoginButtonClick(){
+        createProfileOrLogin.click();
+        return new SignUpPage();
+    }
+
+    public MapPage mapPreviewOpens(){
+        mapCenterButton.isDisplayed();
+        return this;
+    }
+
 
 }

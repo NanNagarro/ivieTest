@@ -1,4 +1,4 @@
-package com.Test.RegressionTest;
+package com.test.RegressionTest;
 
 import com.page.BasePage;
 import com.page.TutorialPage;

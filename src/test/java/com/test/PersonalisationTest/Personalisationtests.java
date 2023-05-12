@@ -1,6 +1,6 @@
-package com.Test.PersonalisationTest;
+package com.test.PersonalisationTest;
 
-import com.Test.base.InitialRobot;
+import com.test.base.InitialRobot;
 import com.page.BasePage;
 import org.testng.annotations.Test;
 

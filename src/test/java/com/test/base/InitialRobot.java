@@ -1,4 +1,4 @@
-package com.Test.base;
+package com.test.base;
 
 import com.page.home.HomeHighLightsPage;
 import com.page.HamburgerMenuIndexPage;

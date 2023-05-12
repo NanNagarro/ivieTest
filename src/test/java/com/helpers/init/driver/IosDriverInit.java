@@ -10,6 +10,9 @@ public class IosDriverInit extends MobileDriverInit{
     public IosDriverInit() {
     }
 
+    // TODO:
+    //  12.05.2023 XCUITestOptions
+    //  https://github.com/appium/java-client/blob/master/docs/v7-to-v8-migration-guide.md
     public static IOSDriver IosSetupAppium(Device device)  {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();

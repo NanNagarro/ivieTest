@@ -1,4 +1,4 @@
-package com.Test.GamificationTest;
+package com.test.GamificationTest;
 
 public class LocationViewHighlightCaruselOnMap {
 }

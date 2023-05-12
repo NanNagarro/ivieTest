@@ -1,6 +1,7 @@
 package com.helpers.helperActions;
 
 import com.helpers.init.driver.MobileDriverInit;
+import com.page.BasePage;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
@@ -15,7 +16,7 @@ import static org.openqa.selenium.interactions.PointerInput.MouseButton.LEFT;
 import static org.openqa.selenium.interactions.PointerInput.Origin.viewport;
 
 
-public class Action extends MobileDriverInit {
+public class Action extends BasePage {
 
     public enum Direction {
         LEFT,
@@ -27,9 +28,11 @@ public class Action extends MobileDriverInit {
 
 
     public static void swipeInsideHorizontalAction(WebElement  element , Direction direction) {
-        Dimension elementLocation = element.getSize();
-        int elementWidth = elementLocation.getWidth();
-        int elementHeight = elementLocation.getHeight();
+        Dimension elementDimension = element.getSize();
+        int elementWidth = elementDimension.getWidth();
+
+        Point elementLocation = element.getLocation();
+        int elementY = elementLocation.getY();
 
         Point pointOptionStart= new Point(0, 0);
         Point pointOptionEnd = new Point(0, 0);
@@ -42,8 +45,8 @@ public class Action extends MobileDriverInit {
             pointOptionStart.x = (int)(elementWidth * 0.1);
             pointOptionEnd.x = (int)(elementWidth * 0.9);
         }
-        pointOptionStart.y = (int) (elementHeight * 0.5);
-        pointOptionEnd.y = (int) (elementHeight * 0.5);
+        pointOptionStart.y = elementY;
+        pointOptionEnd.y = elementY;
 
         PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH,"finger");
         Sequence swipe = new Sequence(finger, 1);

@@ -41,7 +41,7 @@ public class MobileDriverInit {
 
     // Need multiple appium server for multiple device?
     @BeforeMethod
-    public static void init() {
+    public static void initDriver() {
         deviceList = getFilteredDevice();
         setupAppium(getFilteredDevice().get(0));
     }

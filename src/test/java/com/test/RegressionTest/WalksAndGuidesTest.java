@@ -1,6 +1,6 @@
-package com.Test.RegressionTest;
+package com.test.RegressionTest;
 
-import com.Test.base.InitialRobot;
+import com.test.base.InitialRobot;
 import com.page.BasePage;
 import org.testng.annotations.Test;
 
