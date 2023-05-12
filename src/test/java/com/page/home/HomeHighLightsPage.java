@@ -49,21 +49,25 @@ public class HomeHighLightsPage extends BasePage {
     @iOSXCUITFindBy(id = "Ask App Not to Track")
     private WebElement askAppNotToTrack;
 
+    @iOSXCUITFindBy(id = "Continue")
+    private WebElement continuesIOSPopUP;
+
 
 
     public HomeHighLightsPage acceptCookies()  {
         acceptCookies.click();
+
         return this;
     }
 
     public HomeHighLightsPage acceptNoTrackingOnIOS()  {
+
         permissionConsent.click();
         askAppNotToTrack.click();
 
+
         return this;
     }
-
-
 
     public HamburgerMenuIndexPage menuButtonClick(){
         HamburgerMenuIndexPage hamburgerMenuIndexPage = new HamburgerMenuIndexPage();
@@ -76,8 +80,14 @@ public class HomeHighLightsPage extends BasePage {
     }
 
     public HomeForYouPage ForYouButtonClick()  {
-        HomeForYouPage homeForYouPage = new HomeForYouPage();
+
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         ForYou.click();
+        HomeForYouPage homeForYouPage = new HomeForYouPage();
         return homeForYouPage;
     }
 

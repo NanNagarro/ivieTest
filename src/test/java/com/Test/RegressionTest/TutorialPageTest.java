@@ -9,6 +9,12 @@ public class TutorialPageTest extends BasePage {
     public void testLogin() {
         TutorialPage tp = new TutorialPage();
         tp.toHomePage();
+        try {
+            Thread.sleep(15000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
 
