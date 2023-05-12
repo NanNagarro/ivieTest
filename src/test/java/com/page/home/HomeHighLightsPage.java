@@ -80,12 +80,6 @@ public class HomeHighLightsPage extends BasePage {
     }
 
     public HomeForYouPage ForYouButtonClick()  {
-
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
         ForYou.click();
         HomeForYouPage homeForYouPage = new HomeForYouPage();
         return homeForYouPage;

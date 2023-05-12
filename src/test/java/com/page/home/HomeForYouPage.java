@@ -67,7 +67,7 @@ public class HomeForYouPage extends BasePage {
         MusikAndTheater.click();
         MuseumsAndGalleries.click();
         Submit2Interests.click();
-        return this.ChooseInterests();
+        return new ChooseInterests();
     }
 
     public SignUpForProfilDialog SignUpForProfilDialog() {
@@ -75,7 +75,7 @@ public class HomeForYouPage extends BasePage {
         ChooseInterests();
         OkButtonForYou.click();
         NotNowButtonForYou.click();
-        return this.SignUpForProfilDialog();
+        return new SignUpForProfilDialog();
     }
 
     public ForYouAfterSetup ForYouAfterSetup() {
