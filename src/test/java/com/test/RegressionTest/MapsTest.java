@@ -3,8 +3,9 @@ package com.test.RegressionTest;
 import com.page.map.MapPage;
 import com.test.base.InitialRobot;
 import com.page.BasePage;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import static com.helpers.testData.UserGenerator.getUserInfo;
 
 public class MapsTest extends BasePage {
 
@@ -29,8 +30,8 @@ public class MapsTest extends BasePage {
                 //.swipeUpShowLocationDetails()
                 .favoriteButtonClick()
                 .createProfileOrLoginButtonClick()
-                .inputEmail("begeisterndvitalerfuchs@ji6.de")
-                .inputPassword("Ivie12345678")
+                .inputEmail(getUserInfo("user1").getUserName())
+                .inputPassword(getUserInfo("user1").getPassword())
                 .login();
         Thread.sleep(10000);
     }

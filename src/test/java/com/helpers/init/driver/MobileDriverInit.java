@@ -17,7 +17,7 @@ public class MobileDriverInit {
 
     public static List<Device> deviceList;
 
-    static Configuration configuration = new Configuration();
+    public static Configuration configuration = new Configuration();
     static String androidBuildPath = getValueByKey("androidBuildPath");
     static String iosBuildPath = getValueByKey("iosBuildPath");
     static String localUrl = getValueByKey("localUrl");
