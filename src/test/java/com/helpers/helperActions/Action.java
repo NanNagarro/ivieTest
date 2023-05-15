@@ -1,6 +1,5 @@
 package com.helpers.helperActions;
 
-import com.helpers.init.driver.MobileDriverInit;
 import com.page.BasePage;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;

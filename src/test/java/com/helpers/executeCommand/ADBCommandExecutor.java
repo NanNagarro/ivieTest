@@ -1,10 +1,16 @@
 package com.helpers.executeCommand;
 
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.IOException;
 
 public class ADBCommandExecutor {
+    private static final Logger LOGGER = LogManager.getLogger(ADBCommandExecutor.class);
 
     public static void adbCommand(String serialNumber, String permission, Boolean grantFlag) {
+
         String packageName = "at.vienna.ivie.dev";
 
         // Construct the ADB command
@@ -24,9 +30,9 @@ public class ADBCommandExecutor {
             int exitCode = process.waitFor();
 
             if (exitCode == 0) {
-                System.out.println("Permission change successfully.");
+                LOGGER.info("Permission change successfully.");
             } else {
-                System.err.println("Failed to change permission.");
+                LOGGER.info("Failed to change permission.");
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();

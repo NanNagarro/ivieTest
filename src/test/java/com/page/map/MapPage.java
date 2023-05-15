@@ -1,8 +1,7 @@
 package com.page.map;
 
-import com.helpers.helperActions.Action;
 import com.page.BasePage;
-import com.helpers.deviceSettings.Android.LocationPopup;
+import com.helpers.deviceSettingsPage.Android.LocationPopup;
 import com.page.signup.SignUpPage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;

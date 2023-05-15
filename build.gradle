@@ -1,3 +1,7 @@
+buildscript {
+    ext.appiumVersion = '8.4.0'
+}
+
 plugins {
     id 'java'
 }
@@ -9,7 +13,6 @@ repositories {
     mavenCentral()
 }
 
-
 dependencies {
     testImplementation (
             platform("org.junit:junit-bom:5.9.3"),
@@ -20,8 +23,9 @@ dependencies {
     )
 
     implementation(
-            "io.appium:java-client:8.4.0",
+            "io.appium:java-client:${appiumVersion}",
             "org.seleniumhq.selenium:selenium-support:4.9.1",
+            "org.apache.logging.log4j:log4j-core:2.20.0"
     )
 
     compileOnly(

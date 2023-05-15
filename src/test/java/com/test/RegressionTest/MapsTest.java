@@ -5,7 +5,7 @@ import com.test.base.InitialRobot;
 import com.page.BasePage;
 import org.testng.annotations.Test;
 
-import static com.helpers.testData.UserGenerator.getUserInfo;
+import static com.helpers.testData.UserGenerator.getUser;
 
 public class MapsTest extends BasePage {
 
@@ -27,11 +27,10 @@ public class MapsTest extends BasePage {
                 .swipeComponent()
                 .clickTouristInfo()
                 .clickTouristInfoVienna()
-                //.swipeUpShowLocationDetails()
                 .favoriteButtonClick()
                 .createProfileOrLoginButtonClick()
-                .inputEmail(getUserInfo("user1").getUserName())
-                .inputPassword(getUserInfo("user1").getPassword())
+                .inputEmail(getUser("user2").getUserName())
+                .inputPassword(getUser("user2").getPassword())
                 .login();
         Thread.sleep(10000);
     }

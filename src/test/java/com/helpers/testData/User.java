@@ -1,16 +1,13 @@
 package com.helpers.testData;
 
-import lombok.Data;
+import lombok.Builder;
+import lombok.Value;
 
-@Data
+@Value
+@Builder
+// TODO: 15.05.2023 When Update to JDK 14 version,use record.
 public class User {
 
-    private String userName;
-    private String password;
-
-    public User(String userName,String password) {
-        this.userName = userName;
-        this.password = password;
-    }
-
+    String userName;
+    String password;
 }
