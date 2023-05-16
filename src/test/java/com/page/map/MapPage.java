@@ -97,7 +97,7 @@ public class MapPage extends BasePage {
     public MapPage clickLocationButton(){
         Platform platformName = driver.getCapabilities().getPlatformName();
         if (platformName == ANDROID) {
-            adbCommand("RFCR310WZXT", "android.permission.INTERNET", false);
+            adbCommand("RFCR310WZXT", "android.permission.ACCESS_FINE_LOCATION", false);
             LocationPopup lp = new LocationPopup();
             lp.clickAlwaysAllowed();
             lp.yesButtonClicked();
@@ -133,7 +133,12 @@ public class MapPage extends BasePage {
     }
 
     public MapPage swipeUpShowLocationDetails(){
-      swipeUp(true);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        swipeUp(true);
       return this;
     }
 

@@ -6,13 +6,10 @@ import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static com.helpers.helperActions.Action.swipeUp;
 import static java.lang.Boolean.TRUE;
-import static java.lang.Thread.sleep;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -67,6 +64,22 @@ public class WalksAndGuidePage extends BasePage {
         return this;
     }
 
+    public WalksAndGuidePage ClickSortedByAlphabetical(){
+        sortedByAlphabetical.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return this;
+    }
+
+
+    public WalksAndGuidePage ClickSortedBy(){
+        sortedBy.click();
+        return this;
+    }
+
     public void goOnAAudio() {
         filterAudioButton.click();
     }
@@ -85,6 +98,27 @@ public class WalksAndGuidePage extends BasePage {
             ResultContainsKeyWordFlag = ResultContainsKeyWordFlag && containsKeyWordFlag;
         }
         assertEquals(ResultContainsKeyWordFlag, TRUE);
+        return this;
+    }
+
+    public WalksAndGuidePage findIfSortedByAlphabetical() {
+        List<WebElement> textFinder;
+        Boolean compareResult = true;
+
+        // Swipe 5 times to iterate all Guide entries, in ios we need 5 times and id not works
+        for (int i =0; i<5; i++){
+            textFinder =driver.findElements(By.id("locationName"));
+            List<String> strPreSorted = new ArrayList<>();
+            List<String> strAfterSorted = new ArrayList<>();
+            for (WebElement element: textFinder) {
+                strPreSorted.add(element.getText());
+                strAfterSorted.add(element.getText());
+            }
+            Collections.sort(strAfterSorted);
+            compareResult = strPreSorted.equals(strAfterSorted) && compareResult;
+            swipeUp(TRUE);
+        }
+        assertTrue(compareResult);
         return this;
     }
 
@@ -130,3 +164,5 @@ public class WalksAndGuidePage extends BasePage {
 
 
 }
+
+

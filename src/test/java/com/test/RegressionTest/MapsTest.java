@@ -15,9 +15,11 @@ public class MapsTest extends BasePage {
                 .goToMapPage();
     }
     @Test
-    public void testGoOnAWalk() {
+    public void testCompassButtonIsShowUp() throws InterruptedException {
         initPage()
                 .clickLocationButton();
+        Thread.sleep(10000);
+
     }
 
     @Test
@@ -29,8 +31,8 @@ public class MapsTest extends BasePage {
                 .clickTouristInfoVienna()
                 .favoriteButtonClick()
                 .createProfileOrLoginButtonClick()
-                .inputEmail(getUser("user2").getUserName())
-                .inputPassword(getUser("user2").getPassword())
+                .inputEmail(getUser("user3").getUserName())
+                .inputPassword(getUser("user3").getPassword())
                 .login();
         Thread.sleep(10000);
     }
