@@ -1,10 +1,11 @@
-package com.page.touristInfo;
+package com.page.hamburgerPage.touristInfo;
 
+import com.page.hamburgerPage.PageWithMenuButton;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 
-public class TouristInfoPage {
+public class TouristInfoPage extends PageWithMenuButton {
 
     @AndroidFindBy(id = "at.vienna.ivie.dev:id/actionButton")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeButton[@name=\"Show on Map\"])[1]")

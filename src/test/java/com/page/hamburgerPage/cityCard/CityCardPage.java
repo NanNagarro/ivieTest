@@ -1,10 +1,11 @@
-package com.page.cityCard;
+package com.page.hamburgerPage.cityCard;
 
+import com.page.hamburgerPage.PageWithMenuButton;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 
-public class CityCardPage {
+public class CityCardPage extends PageWithMenuButton {
     @AndroidFindBy(id = "Home")
     @iOSXCUITFindBy(id = "HOME")
     private WebElement homeButtonVCC;

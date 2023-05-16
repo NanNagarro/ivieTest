@@ -1,6 +1,7 @@
-package com.page.walksAndGuides;
+package com.page.hamburgerPage.walksAndGuides;
 
 import com.page.BasePage;
+import com.page.hamburgerPage.PageWithMenuButton;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
@@ -13,7 +14,7 @@ import static java.lang.Boolean.TRUE;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class WalksAndGuidePage extends BasePage {
+public class WalksAndGuidePage extends PageWithMenuButton {
 
     @AndroidFindBy(id = "spinner_item_text")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name=\"Top Walks\"]")

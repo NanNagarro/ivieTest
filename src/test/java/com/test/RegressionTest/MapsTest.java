@@ -1,6 +1,6 @@
 package com.test.RegressionTest;
 
-import com.page.map.MapPage;
+import com.page.hamburgerPage.map.MapPage;
 import com.test.base.InitialRobot;
 import com.page.BasePage;
 import org.testng.annotations.Test;
@@ -23,7 +23,7 @@ public class MapsTest extends BasePage {
     }
 
     @Test
-    public void testMapFavoriteLogin() throws InterruptedException {
+    public void testMapFavoriteLogin()  {
         initPage()
                 .clickLocationButton()
                 .swipeComponent()
@@ -33,8 +33,22 @@ public class MapsTest extends BasePage {
                 .createProfileOrLoginButtonClick()
                 .inputEmail(getUser("user3").getUserName())
                 .inputPassword(getUser("user3").getPassword())
-                .login();
-        Thread.sleep(10000);
+                .login()
+                .clickBackButton()
+                .clickOkWindowPopUp()
+                .clickMenuButton()
+                .goToHomePage()
+                .menuButtonClick()
+                .goToMapPage()
+                .swipeComponent()
+                .swipeUpShowLocationDetails()
+                .clickTouristInfoVienna()
+                .swipeUpFromBottom()
+                .clickOpeningHours()
+                .clickOpeningHours()
+                .clickAccessibility()
+                .clickAccessibility();
+
     }
 
     @Test

@@ -101,39 +101,41 @@ public class Action extends BasePage {
         if(partialFlag){
             swipe.addAction(
                             finger.createPointerMove(
-                                    ofSeconds(0), viewport(), windowSize.getWidth()/2 ,  windowSize.getHeight()/ 6 * 4))
+                                    ofSeconds(0), viewport(), windowSize.getWidth()/2 ,  windowSize.getHeight()/ 8 * 7))
                     .addAction(finger.createPointerDown(LEFT.asArg()))
                     .addAction(new Pause(finger, ofMillis(500)))
                     .addAction(finger.createPointerMove(
-                            ofMillis(200), viewport(), windowSize.getWidth()/2, windowSize.getHeight()/ 6 * 3))
+                            ofSeconds(2), viewport(), windowSize.getWidth()/2, windowSize.getHeight()/ 8 * 3))
                     .addAction(finger.createPointerUp(LEFT.asArg()));
         }
         else {
             swipe.addAction(
                             finger.createPointerMove(
-                                    ofSeconds(0), viewport(), windowSize.getWidth()/2 ,  windowSize.getHeight()/ 6 * 5))
+                                    ofSeconds(0), viewport(), windowSize.getWidth()/2 ,  windowSize.getHeight()/ 8 * 7))
                     .addAction(finger.createPointerDown(LEFT.asArg()))
                     .addAction(new Pause(finger, ofMillis(500)))
                     .addAction(finger.createPointerMove(
-                            ofMillis(200), viewport(), windowSize.getWidth()/2, windowSize.getHeight()/ 6))
+                            ofSeconds(2), viewport(), windowSize.getWidth()/2, windowSize.getHeight()/ 8 * 1))
                     .addAction(finger.createPointerUp(LEFT.asArg()));
         }
         driver.perform(singletonList(swipe));
 
     }
 
-    public static void swipeDown() {
-        Dimension windowSize = getScreenSize();
+    public static void swipeUpOut(WebElement webElement) {
+        int xStart = webElement.getLocation().x;
+        int yStart = webElement.getLocation().y;
+
         PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH,"finger");
         Sequence swipe = new Sequence(finger, 1);
         swipe.addAction(
                         finger.createPointerMove(
-                                ofSeconds(0), viewport(), windowSize.getWidth()/2 ,  windowSize.getHeight()/ 6)
+                                ofSeconds(0), viewport(), xStart ,  yStart)
                 )
                 .addAction(finger.createPointerDown(LEFT.asArg()))
                 .addAction(new Pause(finger, ofMillis(500)))
                 .addAction(finger.createPointerMove(
-                        ofMillis(200), viewport(), windowSize.getWidth()/2, windowSize.getHeight()/ 6 * 5))
+                        ofMillis(200), viewport(), xStart,yStart - getScreenSize().getWidth()/6))
                 .addAction(finger.createPointerUp(LEFT.asArg()));
         driver.perform(singletonList(swipe));
 

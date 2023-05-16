@@ -1,6 +1,7 @@
-package com.page.home;
+package com.page.hamburgerPage.home;
 
 import com.page.BasePage;
+import com.page.hamburgerPage.PageWithMenuButton;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import static com.helpers.helperActions.Action.Direction.LEFT;
 import static com.helpers.helperActions.Action.swipeInsideHorizontalAction;
 
-public class HomeForYouPage extends BasePage {
+public class HomeForYouPage extends PageWithMenuButton {
     @AndroidFindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"For you\"]/android.widget.TextView")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name=\"homePage_forYou_button\"]")
     private WebElement ForYou;

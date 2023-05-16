@@ -1,6 +1,6 @@
 package com.page;
 
-import com.page.home.HomeHighLightsPage;
+import com.page.hamburgerPage.home.HomeHighLightsPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

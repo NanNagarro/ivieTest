@@ -1,20 +1,22 @@
-package com.page;
+package com.page.hamburgerPage;
 
-import com.page.cityCard.CityCardPage;
-import com.page.events.EventsPage;
-import com.page.home.HomeHighLightsPage;
-import com.page.ivieTips.IvieTipsPage;
-import com.page.map.MapPage;
-import com.page.myLocations.MyLocationsPage;
-import com.page.settings.SettingsPage;
+import com.page.BasePage;
+import com.page.hamburgerPage.cityCard.CityCardPage;
+import com.page.hamburgerPage.events.EventsPage;
+import com.page.hamburgerPage.home.HomeHighLightsPage;
+import com.page.hamburgerPage.ivieTips.IvieTipsPage;
+import com.page.hamburgerPage.map.MapPage;
+import com.page.hamburgerPage.myLocations.MyLocationsPage;
+import com.page.hamburgerPage.settings.SettingsPage;
 import com.page.signup.SignUpPage;
-import com.page.touristInfo.TouristInfoPage;
-import com.page.walksAndGuides.WalksAndGuidePage;
+import com.page.hamburgerPage.touristInfo.TouristInfoPage;
+import com.page.hamburgerPage.walksAndGuides.WalksAndGuidePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 
-public class HamburgerMenuIndexPage extends BasePage {
+public class HamburgerMenuIndexPage extends PageWithMenuButton {
+
     @AndroidFindBy(id = "profilePlaceholderLabel")
     @iOSXCUITFindBy(id = "Sign up or login for more features")
     private WebElement signUpButton;
@@ -55,6 +57,7 @@ public class HamburgerMenuIndexPage extends BasePage {
     @iOSXCUITFindBy(id = "Settings")
     private WebElement settings;
 
+
     public SignUpPage goToSignUpPage()  {
         signUpButton.click();
         return new SignUpPage();
@@ -67,6 +70,11 @@ public class HamburgerMenuIndexPage extends BasePage {
 
     public MapPage goToMapPage() {
         map.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         return new MapPage();
     }
 

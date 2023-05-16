@@ -1,7 +1,7 @@
 package com.test.base;
 
-import com.page.home.HomeHighLightsPage;
-import com.page.HamburgerMenuIndexPage;
+import com.page.hamburgerPage.home.HomeHighLightsPage;
+import com.page.hamburgerPage.HamburgerMenuIndexPage;
 import com.page.TutorialPage;
 import com.page.BasePage;
 import com.helpers.init.config.Configuration;

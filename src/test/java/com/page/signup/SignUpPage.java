@@ -1,11 +1,13 @@
 package com.page.signup;
 
+import com.helpers.testData.User;
 import com.page.BasePage;
+import com.page.hamburgerPage.PageWithMenuButton;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 
-public class SignUpPage extends BasePage {
+public class SignUpPage extends PageWithMenuButton {
 
     @AndroidFindBy(id = "Register")
     @iOSXCUITFindBy(id = "")
@@ -49,9 +51,9 @@ public class SignUpPage extends BasePage {
         return this;
     }
 
-    public SignUpPage login()  {
+    public UserProfilePage login()  {
         login_btn.click();
-        return this;
+        return new UserProfilePage();
     }
 
     public BasePage facebookLogin() {

@@ -1,13 +1,14 @@
-package com.page.home;
+package com.page.hamburgerPage.home;
 
 import com.page.BasePage;
-import com.page.HamburgerMenuIndexPage;
+import com.page.hamburgerPage.HamburgerMenuIndexPage;
+import com.page.hamburgerPage.PageWithMenuButton;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 
 
-public class HomeHighLightsPage extends BasePage {
+public class HomeHighLightsPage extends PageWithMenuButton {
     @AndroidFindBy(id = "btn_accept_cookies")
     @iOSXCUITFindBy(id = "Accept All Trackings")
     private WebElement acceptCookies;
