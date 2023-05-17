@@ -2,9 +2,11 @@ package com.helpers.init.driver;
 
 import com.helpers.init.config.Configuration;
 import io.appium.java_client.AppiumDriver;
+import lombok.SneakyThrows;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,10 +58,20 @@ public class MobileDriverInit {
                 driver = IosSetupAppium(device);
                 break;
         }
+        driver.manage().timeouts().implicitlyWait(
+                Duration.ofSeconds(
+                        Long.parseLong(configuration.getPropertyValues("config.properties","IMPLICIT_WAIT_SECONDS"))
+                ));
+        driver.manage().timeouts().implicitlyWait(
+                Duration.ofSeconds(
+                        Long.parseLong(configuration.getPropertyValues("config.properties","PAGE_LOAD_TIMEOUT_SECONDS"))
+                ));
     }
 
+    @SneakyThrows(InterruptedException.class)
     @AfterMethod
     public void tearDownAppium() {
+        Thread.sleep(5000);
         if (driver != null) {
             driver.quit();
         }

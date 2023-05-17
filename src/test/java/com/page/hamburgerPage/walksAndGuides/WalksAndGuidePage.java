@@ -1,6 +1,5 @@
 package com.page.hamburgerPage.walksAndGuides;
 
-import com.page.BasePage;
 import com.page.hamburgerPage.PageWithMenuButton;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
@@ -21,28 +20,28 @@ public class WalksAndGuidePage extends PageWithMenuButton {
     private WebElement sortedBy;
 
     // TODO: 05.05.2023 sort by items id are all the same.
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[1]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Top Walks']")
     @iOSXCUITFindBy(xpath = "id")
     private WebElement sortedByTopWalks;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[2]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Alphabetical']")
     @iOSXCUITFindBy(xpath = "id")
     private WebElement sortedByAlphabetical;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[3]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='My interests']")
     @iOSXCUITFindBy(xpath = "id")
     private WebElement sortedByMyInterests;
 
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[2]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Walks']")
     @iOSXCUITFindBy(id = "Walks")
     private WebElement filterWalksButton;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[3]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Guides']")
     @iOSXCUITFindBy(id = "Guides")
     private WebElement filterGuidesButton;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[4]")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Audio']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeStaticText[@name=\"Audio\"])[1]")
     private WebElement filterAudioButton;
 
@@ -67,11 +66,6 @@ public class WalksAndGuidePage extends PageWithMenuButton {
 
     public WalksAndGuidePage ClickSortedByAlphabetical(){
         sortedByAlphabetical.click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
         return this;
     }
 
@@ -87,7 +81,7 @@ public class WalksAndGuidePage extends PageWithMenuButton {
 
     public WalksAndGuidePage findWalkKeywords() {
         goOnAWalk();
-        swipeUp(TRUE);
+        swipeUp();
         List<WebElement> textFinder =driver.findElements(By.id("locationName"));
         assertEquals(textFinder.size(),5);
 
@@ -117,7 +111,7 @@ public class WalksAndGuidePage extends PageWithMenuButton {
             }
             Collections.sort(strAfterSorted);
             compareResult = strPreSorted.equals(strAfterSorted) && compareResult;
-            swipeUp(TRUE);
+            swipeUp();
         }
         assertTrue(compareResult);
         return this;
@@ -140,7 +134,7 @@ public class WalksAndGuidePage extends PageWithMenuButton {
                     guideSet.add(element.getText());
                 }
             }
-            swipeUp(TRUE);
+            swipeUp();
         }
 
         int size =  guideSet.size();
@@ -163,7 +157,4 @@ public class WalksAndGuidePage extends PageWithMenuButton {
         return this;
     }
 
-
 }
-
-

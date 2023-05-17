@@ -1,6 +1,5 @@
 package com.page.hamburgerPage;
 
-import com.page.BasePage;
 import com.page.hamburgerPage.cityCard.CityCardPage;
 import com.page.hamburgerPage.events.EventsPage;
 import com.page.hamburgerPage.home.HomeHighLightsPage;
@@ -21,39 +20,39 @@ public class HamburgerMenuIndexPage extends PageWithMenuButton {
     @iOSXCUITFindBy(id = "Sign up or login for more features")
     private WebElement signUpButton;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.view.ViewGroup/android.widget.TextView")
+    @AndroidFindBy(xpath ="//android.widget.TextView[@text='Home']")
     @iOSXCUITFindBy(id = "Home")
     private WebElement home;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]/android.view.ViewGroup")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Map']")
     @iOSXCUITFindBy(id = "Map")
     private WebElement map;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[3]/android.view.ViewGroup")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Walks & Guides']")
     @iOSXCUITFindBy(id = "Walks & Guides")
     private WebElement walksAndGuide;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[4]/android.view.ViewGroup")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Events']")
     @iOSXCUITFindBy(id = "Events")
     private WebElement events;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[5]/android.view.ViewGroup")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='City Card']")
     @iOSXCUITFindBy(id = "City Card")
     private WebElement cityCard;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[6]/android.view.ViewGroup")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='My Locations']")
     @iOSXCUITFindBy(id = "My Locations")
     private WebElement myLocations;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[7]/android.view.ViewGroup")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='ivie's Tips']")
     @iOSXCUITFindBy(id = "ivie's Tips")
     private WebElement ivieTips;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[8]/android.view.ViewGroup")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Tourist-Info']")
     @iOSXCUITFindBy(id = "Tourist-Info")
     private WebElement touristInfo;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[9]/android.view.ViewGroup")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Settings']")
     @iOSXCUITFindBy(id = "Settings")
     private WebElement settings;
 
@@ -70,11 +69,6 @@ public class HamburgerMenuIndexPage extends PageWithMenuButton {
 
     public MapPage goToMapPage() {
         map.click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
         return new MapPage();
     }
 

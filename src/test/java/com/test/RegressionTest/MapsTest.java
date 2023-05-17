@@ -15,18 +15,16 @@ public class MapsTest extends BasePage {
                 .goToMapPage();
     }
     @Test
-    public void testCompassButtonIsShowUp() throws InterruptedException {
+    public void testCompassButtonIsShowUp() {
         initPage()
                 .clickLocationButton();
-        Thread.sleep(10000);
-
     }
 
     @Test
     public void testMapFavoriteLogin()  {
         initPage()
                 .clickLocationButton()
-                .swipeComponent()
+                .swipeLeftUntilTouristInfoDisplayed()
                 .clickTouristInfo()
                 .clickTouristInfoVienna()
                 .favoriteButtonClick()
@@ -40,8 +38,8 @@ public class MapsTest extends BasePage {
                 .goToHomePage()
                 .menuButtonClick()
                 .goToMapPage()
-                .swipeComponent()
-                .swipeUpShowLocationDetails()
+                .swipeLeftUntilTouristInfoDisplayed()
+                .swipeUphowLocationDetails()
                 .clickTouristInfoVienna()
                 .swipeUpFromBottom()
                 .clickOpeningHours()
@@ -52,13 +50,12 @@ public class MapsTest extends BasePage {
     }
 
     @Test
-    public void testMapPreviewIcon() throws InterruptedException {
+    public void testMapPreviewIcon()  {
         initPage()
                 .clickLocationButton()
-                .swipeComponent()
+                .swipeLeftUntilTouristInfoDisplayed()
                 .clickTouristInfo()
                 .clickTouristInfoVienna()
                 .mapPreviewOpens();
-        Thread.sleep(10000);
     }
 }

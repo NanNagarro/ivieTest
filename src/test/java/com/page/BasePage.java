@@ -15,7 +15,14 @@ public class BasePage extends MobileDriverInit {
 
     public void initElements(){
         System.out.println("Binding page with driver" + this);
-        PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this);
+        PageFactory.initElements(
+                new AppiumFieldDecorator(
+                        driver,
+                        Duration.ofSeconds(
+                                Long.parseLong(configuration.getPropertyValues(
+                                        "config.properties","PAGE_LOAD_TIMEOUT_SECONDS"))
+                        )),
+                this);
     }
 
     public void webElementsAreDisplayed(WebElement[] webElements){

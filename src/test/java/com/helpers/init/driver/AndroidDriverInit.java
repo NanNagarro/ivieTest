@@ -16,9 +16,9 @@ public class AndroidDriverInit extends MobileDriverInit {
         UiAutomator2Options capabilities = new UiAutomator2Options ();
         String serverUrl;
 
-        capabilities.setPlatformName("Android");
-        capabilities.setDeviceName(device.getDeviceName());
-        capabilities.setPlatformVersion(device.getPlatformVersion());
+        capabilities
+                .setDeviceName(device.getDeviceName())
+                .setPlatformVersion(device.getPlatformVersion());
 
         if (device.getLocal()){
             serverUrl = localUrl;
@@ -30,7 +30,6 @@ public class AndroidDriverInit extends MobileDriverInit {
             capabilities.setCapability("browserstack.user", remoteUser);
             capabilities.setCapability("browserstack.key", remoteKey);
             capabilities.setCapability("app_url", "bs://52cd3f404a59054a0d2079d0f7cedfb91cdcb6b2");
-
         }
 
         try {
