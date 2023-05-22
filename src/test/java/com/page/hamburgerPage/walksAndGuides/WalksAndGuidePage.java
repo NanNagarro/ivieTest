@@ -1,6 +1,5 @@
 package com.page.hamburgerPage.walksAndGuides;
 
-import com.helpers.helperActions.Action;
 import com.page.hamburgerPage.PageWithMenuButton;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;

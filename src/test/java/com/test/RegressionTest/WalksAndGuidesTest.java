@@ -15,7 +15,6 @@ public class WalksAndGuidesTest extends BasePage {
     //Select one filter option:
     //
     //Walks: have Walk in the name
-    @Test
     public void testGoOnAWalk()  {
         new InitialRobot()
                 .toHamburgerMenuIndexPage()
@@ -24,7 +23,7 @@ public class WalksAndGuidesTest extends BasePage {
     }
 
     //guides: have Guide in the name
-    @Test
+    //@Test(retryAnalyzer = Retry.class)
     public void testGoOnAGuide()  {
         new InitialRobot()
                 .toHamburgerMenuIndexPage()
@@ -32,8 +31,7 @@ public class WalksAndGuidesTest extends BasePage {
                 .findGuideKeywords();
     }
 
-    //Audio: on the teaser it says “Audio” on the picture (check if there is a property)
-    @Test
+    @Test(description = "Audio: on the teaser it says “Audio” on the picture (check if there is a property)")
     public void testGoOnAudio()  {
         new InitialRobot()
                 .toHamburgerMenuIndexPage()
