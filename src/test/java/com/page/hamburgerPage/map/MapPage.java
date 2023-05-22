@@ -93,7 +93,7 @@ public class MapPage extends PageWithMenuButton {
     @iOSXCUITFindBy(id = "id")
     private WebElement createProfileOrLogin;
 
-    @AndroidFindBy(id = "layout_navigator")
+    @AndroidFindBy(id = "primary_btn")
     @iOSXCUITFindBy(id = "id")
     private WebElement okWindowPopUp;
 
@@ -214,7 +214,7 @@ public class MapPage extends PageWithMenuButton {
     }
 
     public MapPage closeDeviceShareDetails(){
-        swipeVertical(DOWN);
+        clickScreen(50,33);
         return this;
     }
 
