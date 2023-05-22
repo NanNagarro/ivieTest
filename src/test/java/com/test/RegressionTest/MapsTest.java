@@ -39,14 +39,16 @@ public class MapsTest extends BasePage {
                 .menuButtonClick()
                 .goToMapPage()
                 .swipeLeftUntilTouristInfoDisplayed()
-                .swipeUphowLocationDetails()
+                .swipeUpToShowTouristInfoDetail()
                 .clickTouristInfoVienna()
-                .swipeUpFromBottom()
+                .swipeUpToShowOpeningHours()
                 .clickOpeningHours()
                 .clickOpeningHours()
                 .clickAccessibility()
-                .clickAccessibility();
-
+                .clickAccessibility()
+                .swipeDownToShowShareButton()
+                .clickShareButton()
+                .closeDeviceShareDetails();
     }
 
     @Test

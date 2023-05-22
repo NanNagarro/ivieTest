@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 
 import static com.helpers.executeCommand.ADBCommandExecutor.adbCommand;
 import static com.helpers.helperActions.Action.*;
-import static com.helpers.helperActions.Action.Direction.LEFT;
+import static com.helpers.helperActions.Action.Direction.*;
 import static org.openqa.selenium.Platform.ANDROID;
 
 public class MapPage extends PageWithMenuButton {
@@ -109,6 +109,19 @@ public class MapPage extends PageWithMenuButton {
     @iOSXCUITFindBy(id = "id")
     private WebElement accessibility;
 
+    @AndroidFindBy(id = "location_xs_IV")
+    @iOSXCUITFindBy(id = "id")
+    private WebElement locationPicture;
+
+    @AndroidFindBy(id = "share_icon_xs")
+    @iOSXCUITFindBy(id = "id")
+    private WebElement shareButton;
+
+    @AndroidFindBy(id = "locations_xs_description")
+    @iOSXCUITFindBy(id = "id")
+    private WebElement locationDescription;
+
+
     public MapPage clickLocationButton(){
         Platform platformName = driver.getCapabilities().getPlatformName();
         if (platformName == ANDROID) {
@@ -125,11 +138,6 @@ public class MapPage extends PageWithMenuButton {
         return this;
     }
 
-    public MapPage swipeLeftUntilTouristInfoDisplayed(){
-        swipeInsideHorizontalAction(category_menu_list, touristInfoButton, LEFT);
-        return this;
-    }
-
     public MapPage clickTouristInfo(){
         touristInfoButton.click();
         return this;
@@ -137,16 +145,6 @@ public class MapPage extends PageWithMenuButton {
 
     public MapPage clickTouristInfoVienna(){
         touristInfoVienna.click();
-        return this;
-    }
-
-    public MapPage swipeUphowLocationDetails(){
-        swipeUpWithElement(touristInfoButton);
-        return this;
-    }
-
-    public MapPage swipeUpFromBottom(){
-        swipeUp();
         return this;
     }
 
@@ -160,8 +158,8 @@ public class MapPage extends PageWithMenuButton {
         return new SignUpPage();
     }
 
-    public MapPage mapPreviewOpens(){
-        mapCenterButton.isDisplayed();
+    public MapPage clickMapPreview(){
+        mapCenterButton.click();
         return this;
     }
 
@@ -175,17 +173,52 @@ public class MapPage extends PageWithMenuButton {
         return this;
     }
 
-
     public MapPage clickAccessibility(){
         accessibility.click();
         return this;
     }
 
-
     public HamburgerMenuIndexPage clickMenuButton(){
         menuButton.click();
         return new HamburgerMenuIndexPage();
     }
+
+    public MapPage clickShareButton(){
+        shareButton.click();
+        return this;
+    }
+
+    public MapPage mapPreviewOpens(){
+        mapCenterButton.isDisplayed();
+        return this;
+    }
+
+    public MapPage swipeUpToShowTouristInfoDetail(){
+        swipeVerticalWithElement(touristInfoButton,UP);
+        return this;
+    }
+
+    public MapPage swipeDownToShowShareButton(){
+        swipeVerticalWithElement(locationDescription,DOWN);
+        return this;
+    }
+
+    public MapPage swipeUpToShowOpeningHours(){
+        swipeVerticalWithElement(shareButton,UP);
+        return this;
+    }
+
+    public MapPage swipeLeftUntilTouristInfoDisplayed(){
+        swipeInsideHorizontalAction(category_menu_list, touristInfoButton, LEFT);
+        return this;
+    }
+
+    public MapPage closeDeviceShareDetails(){
+        swipeVertical(DOWN);
+        return this;
+    }
+
+
 
 
 

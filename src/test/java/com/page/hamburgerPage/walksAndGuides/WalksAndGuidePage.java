@@ -1,5 +1,6 @@
 package com.page.hamburgerPage.walksAndGuides;
 
+import com.helpers.helperActions.Action;
 import com.page.hamburgerPage.PageWithMenuButton;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
@@ -8,7 +9,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.*;
 
-import static com.helpers.helperActions.Action.swipeUp;
+import static com.helpers.helperActions.Action.Direction.UP;
+import static com.helpers.helperActions.Action.swipeVertical;
 import static java.lang.Boolean.TRUE;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -81,7 +83,7 @@ public class WalksAndGuidePage extends PageWithMenuButton {
 
     public WalksAndGuidePage findWalkKeywords() {
         goOnAWalk();
-        swipeUp();
+        swipeVertical(UP);
         List<WebElement> textFinder =driver.findElements(By.id("locationName"));
         assertEquals(textFinder.size(),5);
 
@@ -111,7 +113,7 @@ public class WalksAndGuidePage extends PageWithMenuButton {
             }
             Collections.sort(strAfterSorted);
             compareResult = strPreSorted.equals(strAfterSorted) && compareResult;
-            swipeUp();
+            swipeVertical(UP);
         }
         assertTrue(compareResult);
         return this;
@@ -134,7 +136,7 @@ public class WalksAndGuidePage extends PageWithMenuButton {
                     guideSet.add(element.getText());
                 }
             }
-            swipeUp();
+            swipeVertical(UP);
         }
 
         int size =  guideSet.size();
