@@ -4,7 +4,7 @@ import com.page.hamburgerPage.home.HomeHighLightsPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.helpers.helperActions.Action.Direction.LEFT;
+import static com.helpers.helperActions.Action.DIRECTION.LEFT;
 import static com.helpers.helperActions.Action.swipeInsideHorizontalAction;
 
 public class TutorialPage extends BasePage {
@@ -19,8 +19,6 @@ public class TutorialPage extends BasePage {
     @FindBy(id = "skip_button")
     private WebElement skipButton;
 
-
-
     public boolean isTutorialImageDisplayed() {
         return tutorialImage.isDisplayed();
     }
@@ -29,12 +27,12 @@ public class TutorialPage extends BasePage {
         swipeInsideHorizontalAction(tutorialImage, LEFT);
     }
 
-    public HomeHighLightsPage toHomePage() {
+    public HomeHighLightsPage toMainPage() {
         tutorialImageSwipeLeft();
         tutorialImageSwipeLeft();
         tutorialImageSwipeLeft();
         skipButton.click();
-        return  new HomeHighLightsPage();
+        return new HomeHighLightsPage();
     }
 
 }

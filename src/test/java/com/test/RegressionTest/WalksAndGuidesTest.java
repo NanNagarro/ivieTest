@@ -56,8 +56,8 @@ public class WalksAndGuidesTest extends BasePage {
         new InitialRobot()
                 .toHamburgerMenuIndexPage()
                 .goToWalksAndGuidePage()
-                .ClickSortedBy()
-                .ClickSortedByAlphabetical()
+                .clickSortedBy()
+                .clickSortedByAlphabetical()
                 .findIfSortedByAlphabetical();
     }
 

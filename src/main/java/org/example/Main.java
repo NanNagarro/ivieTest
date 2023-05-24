@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String filePath = "./src/test/resources/config.properties";
         Properties pros = new Properties();
+
         FileInputStream ip = new FileInputStream(filePath);
         pros.load(ip);
 

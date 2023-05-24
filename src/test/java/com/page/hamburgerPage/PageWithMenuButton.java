@@ -10,8 +10,17 @@ public class PageWithMenuButton extends BasePage {
     @iOSXCUITFindBy(id = "id")
     private WebElement menuButton;
 
+    @AndroidFindBy(id = "homeLayout")
+    @iOSXCUITFindBy(id = "id")
+    private WebElement homeLayout;
+
     public PageWithMenuButton clickMenuButton()  {
         menuButton.click();
+        return this;
+    }
+
+    public PageWithMenuButton clickHomeLayout()  {
+        homeLayout.click();
         return this;
     }
 

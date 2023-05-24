@@ -8,28 +8,34 @@ import org.openqa.selenium.WebElement;
 
 import java.util.*;
 
-import static com.helpers.helperActions.Action.Direction.UP;
+import static com.helpers.helperActions.Action.DIRECTION.UP;
+import static com.helpers.helperActions.Action.START_HORIZONTAL.MIDDLE;
 import static com.helpers.helperActions.Action.swipeVertical;
+import static com.helpers.helperActions.Action.swipeVerticalToFindComponent;
 import static java.lang.Boolean.TRUE;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class WalksAndGuidePage extends PageWithMenuButton {
 
+    @AndroidFindBy(id ="back")
+    @iOSXCUITFindBy(id = "id")
+    private WebElement back;
+
     @AndroidFindBy(id = "spinner_item_text")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name=\"Top Walks\"]")
     private WebElement sortedBy;
 
     // TODO: 05.05.2023 sort by items id are all the same.
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Top Walks']")
+    @AndroidFindBy(xpath = "//android.widget.CheckedTextView[@text='Top Walks']")
     @iOSXCUITFindBy(xpath = "id")
     private WebElement sortedByTopWalks;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Alphabetical']")
+    @AndroidFindBy(xpath = "//android.widget.CheckedTextView[@text='Alphabetical']")
     @iOSXCUITFindBy(xpath = "id")
     private WebElement sortedByAlphabetical;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='My interests']")
+    @AndroidFindBy(xpath = "//android.widget.CheckedTextView[@text='My interests']")
     @iOSXCUITFindBy(xpath = "id")
     private WebElement sortedByMyInterests;
 
@@ -46,14 +52,35 @@ public class WalksAndGuidePage extends PageWithMenuButton {
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeStaticText[@name=\"Audio\"])[1]")
     private WebElement filterAudioButton;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.GridView/android.view.ViewGroup[4]/android.widget.ImageView")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Beethoven Walk']")
     @iOSXCUITFindBy(id = "Beethoven Walk")
-    private WebElement selectWalkAndAudioBeethoven;
+    private WebElement beethovenWalk;
 
-    @AndroidFindBy(id = "hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.GridView/android.view.ViewGroup[3]/android.widget.ImageView")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Ringstrasse Walk']")
+    @iOSXCUITFindBy(id = "Ringstrasse Walk")
+    private WebElement ringstrasseWalk;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Viennese Modernism Guide']")
+    @iOSXCUITFindBy(id = "vienneseModernismGuide")
+    private WebElement vienneseModernismGuide;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Curious Museums Guide']")
     @iOSXCUITFindBy(id = "Curious Museums Guide")
-    private WebElement selectGuideCuriousMuseums;
+    private WebElement curiousMuseumsGuide;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Rotes Wien Guide']")
+    @iOSXCUITFindBy(id = "Curious Museums Guide")
+    private WebElement redViennaGuide;
+
+    public WalksAndGuidePage clickBackButton()  {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        back.click();
+        return this;
+    }
 
     public WalksAndGuidePage goOnAWalk()  {
        filterWalksButton.click();
@@ -65,13 +92,13 @@ public class WalksAndGuidePage extends PageWithMenuButton {
         return this;
     }
 
-    public WalksAndGuidePage ClickSortedByAlphabetical(){
+    public WalksAndGuidePage clickSortedByAlphabetical(){
         sortedByAlphabetical.click();
         return this;
     }
 
 
-    public WalksAndGuidePage ClickSortedBy(){
+    public WalksAndGuidePage clickSortedBy(){
         sortedBy.click();
         return this;
     }
@@ -80,9 +107,14 @@ public class WalksAndGuidePage extends PageWithMenuButton {
         filterAudioButton.click();
     }
 
+    public WalksAndGuidePage SelectCuriousMuseumsGuide(){
+        curiousMuseumsGuide.click();
+        return this;
+    }
+
     public WalksAndGuidePage findWalkKeywords() {
         goOnAWalk();
-        swipeVertical(UP);
+        swipeVertical(MIDDLE,UP);
         List<WebElement> textFinder =driver.findElements(By.id("locationName"));
         assertEquals(textFinder.size(),5);
 
@@ -112,7 +144,7 @@ public class WalksAndGuidePage extends PageWithMenuButton {
             }
             Collections.sort(strAfterSorted);
             compareResult = strPreSorted.equals(strAfterSorted) && compareResult;
-            swipeVertical(UP);
+            swipeVertical(MIDDLE, UP);
         }
         assertTrue(compareResult);
         return this;
@@ -135,7 +167,7 @@ public class WalksAndGuidePage extends PageWithMenuButton {
                     guideSet.add(element.getText());
                 }
             }
-            swipeVertical(UP);
+            swipeVertical(MIDDLE, UP);
         }
 
         int size =  guideSet.size();
@@ -155,6 +187,32 @@ public class WalksAndGuidePage extends PageWithMenuButton {
 
     public WalksAndGuidePage testSortByIsClickable() {
         assertTrue(sortedBy.isEnabled());
+        return this;
+    }
+
+    public WalksAndGuidePage goToCuriousMuseumsGuide() {
+        swipeVerticalToFindComponent(curiousMuseumsGuide);
+        curiousMuseumsGuide.click();
+        return this;
+    }
+
+    public WalksAndGuidePage goToRedViennaGuide() {
+        swipeVerticalToFindComponent(redViennaGuide);
+        redViennaGuide.click();
+        return this;
+    }
+
+    public WalksAndGuidePage checkLocationNameIsDisplayed() {
+        assertTrue(swipeVerticalToFindComponent(beethovenWalk));
+        assertTrue(swipeVerticalToFindComponent(ringstrasseWalk));
+        assertTrue(swipeVerticalToFindComponent(vienneseModernismGuide));
+        return this;
+    }
+
+    public WalksAndGuidePage checkLocationNameIsDisplayedByAlphabetical() {
+        assertTrue(swipeVerticalToFindComponent(beethovenWalk));
+        assertTrue(swipeVerticalToFindComponent(curiousMuseumsGuide));
+        assertTrue(swipeVerticalToFindComponent(vienneseModernismGuide));
         return this;
     }
 

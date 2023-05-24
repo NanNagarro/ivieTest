@@ -7,6 +7,10 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 
+import static com.helpers.helperActions.Action.DIRECTION.LEFT;
+import static com.helpers.helperActions.Action.clickScreen;
+import static com.helpers.helperActions.Action.swipeInsideHorizontalAction;
+
 
 public class HomeHighLightsPage extends PageWithMenuButton {
     @AndroidFindBy(id = "btn_accept_cookies")
@@ -29,9 +33,13 @@ public class HomeHighLightsPage extends PageWithMenuButton {
     @iOSXCUITFindBy(id = "id")
     private WebElement detailButton;
 
-    @AndroidFindBy(id = "at.vienna.ivie.dev:id/current_weather_layout")
+    @AndroidFindBy(id = "weatherButton")
     @iOSXCUITFindBy(id = "weatherButton")
-    private WebElement WeatherIcon;
+    private WebElement weatherIcon;
+
+    @AndroidFindBy(id = "card_view")
+    @iOSXCUITFindBy(id = "weatherButton")
+    private WebElement weatherContainer;
 
     @AndroidFindBy(id = "at.vienna.ivie.dev:id/search_layout")
     @iOSXCUITFindBy(id = "searchButton")
@@ -85,6 +93,23 @@ public class HomeHighLightsPage extends PageWithMenuButton {
         HomeForYouPage homeForYouPage = new HomeForYouPage();
         return homeForYouPage;
     }
+
+    public HomeHighLightsPage clickWeatherIcon ()  {
+        weatherIcon.click();
+        return this;
+    }
+
+    public HomeHighLightsPage swipeWeatherCards ()  {
+        swipeInsideHorizontalAction(weatherContainer, LEFT);
+        swipeInsideHorizontalAction(weatherContainer, LEFT);
+        return this;
+    }
+
+    public HomeHighLightsPage closeWeatherCards ()  {
+        clickScreen(50, 75);
+        return this;
+    }
+
 
 
 

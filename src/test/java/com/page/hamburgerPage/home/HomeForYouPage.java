@@ -1,12 +1,11 @@
 package com.page.hamburgerPage.home;
 
-import com.page.BasePage;
 import com.page.hamburgerPage.PageWithMenuButton;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 
-import static com.helpers.helperActions.Action.Direction.LEFT;
+import static com.helpers.helperActions.Action.DIRECTION.LEFT;
 import static com.helpers.helperActions.Action.swipeInsideHorizontalAction;
 
 public class HomeForYouPage extends PageWithMenuButton {

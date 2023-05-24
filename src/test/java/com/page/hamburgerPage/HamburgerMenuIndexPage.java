@@ -1,5 +1,6 @@
 package com.page.hamburgerPage;
 
+import com.helpers.helperActions.Action;
 import com.page.hamburgerPage.cityCard.CityCardPage;
 import com.page.hamburgerPage.events.EventsPage;
 import com.page.hamburgerPage.home.HomeHighLightsPage;
@@ -13,6 +14,11 @@ import com.page.hamburgerPage.walksAndGuides.WalksAndGuidePage;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
+
+import static com.helpers.helperActions.Action.DIRECTION.UP;
+import static com.helpers.helperActions.Action.START_HORIZONTAL.LEFT;
+import static com.helpers.helperActions.Action.START_HORIZONTAL.MIDDLE;
+import static com.helpers.helperActions.Action.swipeVertical;
 
 public class HamburgerMenuIndexPage extends PageWithMenuButton {
 
@@ -103,6 +109,12 @@ public class HamburgerMenuIndexPage extends PageWithMenuButton {
     }
 
     public SettingsPage goToSettingsPage(){
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        swipeVertical(LEFT,UP);
         settings.click();
         return new SettingsPage();
     }

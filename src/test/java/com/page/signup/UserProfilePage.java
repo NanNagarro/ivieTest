@@ -17,8 +17,31 @@ public class UserProfilePage extends PageWithMenuButton {
     @iOSXCUITFindBy(id = "id")
     private WebElement editDetails;
 
+    @AndroidFindBy(id = "logout_title")
+    @iOSXCUITFindBy(id = "id")
+    private WebElement logout;
+
+    @AndroidFindBy(id = "android:id/button2")
+    @iOSXCUITFindBy(id = "id")
+    private WebElement logoutPopupCancel;
+
+    @AndroidFindBy(id = "android:id/button1")
+    @iOSXCUITFindBy(id = "id")
+    private WebElement logoutPopupConfirm;
+
     public MapPage clickBackButton()  {
         backButton.click();
         return new MapPage();
+    }
+
+    public EditDetailsPage clickEditDetailsButton()  {
+        editDetails.click();
+        return new EditDetailsPage();
+    }
+
+    public UserProfilePage clickLogoutButton()  {
+        logout.click();
+        logoutPopupConfirm.click();
+        return this;
     }
 }

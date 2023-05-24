@@ -17,13 +17,13 @@ public class InitialRobot extends BasePage {
         TutorialPage tp = new TutorialPage();
 
         if (Objects.equals(platform_name, "iOS")){
-            return tp.toHomePage()
+            return tp.toMainPage()
                 .acceptCookies()
                 .acceptNoTrackingOnIOS()
                 .menuButtonClick();
         }
         else{
-            return tp.toHomePage()
+            return tp.toMainPage()
                     .acceptCookies()
                     .menuButtonClick();
         }
@@ -36,12 +36,12 @@ public class InitialRobot extends BasePage {
         TutorialPage tp = new TutorialPage();
 
         if (Objects.equals(platform_name, "IOS")){
-            return tp.toHomePage()
+            return tp.toMainPage()
                     .acceptCookies()
                     .acceptNoTrackingOnIOS();
         }
         else{
-            return tp.toHomePage()
+            return tp.toMainPage()
                     .acceptCookies();
         }
     }

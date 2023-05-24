@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 
 import static com.helpers.executeCommand.ADBCommandExecutor.adbCommand;
 import static com.helpers.helperActions.Action.*;
-import static com.helpers.helperActions.Action.Direction.*;
+import static com.helpers.helperActions.Action.DIRECTION.*;
 import static org.openqa.selenium.Platform.ANDROID;
 
 public class MapPage extends PageWithMenuButton {
